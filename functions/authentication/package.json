@@ -1,0 +1,9 @@
+{
+	"name": "authentication",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "rohanshinde50650@gmail.com",
+	"dependencies": {
+		"zcatalyst-sdk-node": "latest"
+	}
+}

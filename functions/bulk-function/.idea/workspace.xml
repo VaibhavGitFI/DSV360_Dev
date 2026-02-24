@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ce90584-22f4-4cd0-8bc7-b586a065ba23" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/authentication/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/authentication/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/Bulk.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/Bulk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/Bulk.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/Bulk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/catalyst-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/catalyst-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/catalyst-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/catalyst-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/controllers/BulkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/controllers/BulkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/controllers/BulkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/controllers/BulkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/opencsv-5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/utility/ResponseUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/utility/ResponseUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/bulk-function/utility/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/bulk-function/utility/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/BadgeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/BadgeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/attendanceLogsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/attendanceLogsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/employeeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/employeeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/issueController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/issueController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/leaveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/leaveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/superAdminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/controller/superAdminController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.build/functions/time_entry_management_application_function/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.output/Bulk.class" beforeDir="false" afterPath="$PROJECT_DIR$/.output/Bulk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.output/controllers/BulkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/.output/controllers/BulkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.output/utility/GetAccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/.output/utility/GetAccessToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.output/utility/ResponseUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/.output/utility/ResponseUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bulk.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bulk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalyst-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalyst-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalyst-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/catalyst-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/BulkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BulkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/opencsv-5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/utility/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/BadgeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/BadgeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/attendanceLogsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/attendanceLogsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/employeeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/employeeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/issueController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/issueController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/leaveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/leaveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/controller/superAdminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/controller/superAdminController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time_entry_management_application_function/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../time_entry_management_application_function/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Admin/Badges.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Admin/Badges.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Admin/Employee.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Admin/Employee.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Admin/Layout1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Admin/Layout1.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Admin/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Admin/Project.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Admin/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Admin/Task.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Employee/Employee.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Employee/Employee.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Employee/Layout1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Employee/Layout1.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Employee/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Employee/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Employee/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Employee/Project.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Employee/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Employee/Task.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Org/AddOrganizationDrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Org/AddOrganizationDrawer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Org/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Org/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Org/Organizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Org/Organizations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/Org/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/Org/Settings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/Client/clientSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/Client/clientSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/Client/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/Client/contacts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/Client/issueSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/Client/issueSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/EmpProject/EmpProjectSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/EmpProject/EmpProjectSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/EmpTask/EmpTaskSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/EmpTask/EmpTaskSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/Project/ProjectSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/Project/ProjectSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/SuperAdmin/SuperAdminSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/SuperAdmin/SuperAdminSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/contacts/contactIssueSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/contacts/contactIssueSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-app/src/redux/rdxStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-app/src/redux/rdxStore.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="33SkO6v2Dr1s7E9adP5o0jEZ3OM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend-feature&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ce90584-22f4-4cd0-8bc7-b586a065ba23" name="Changes" comment="" />
+      <created>1759317826846</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759317826846</updated>
+    </task>
+    <servers />
+  </component>
+</project>

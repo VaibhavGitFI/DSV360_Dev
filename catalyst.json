@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "targets": [
+      "authentication",
+      "time_entry_management_application_function",
+      "bulk-function",
+      "zoho_analytics_datastore_sync_record_handler",
+      "ai_service",
+      "zoho_analytics_datastore_sync_routes_handler",
+      "stop_timer_function",
+      "sending_email",
+      "send_remainder_function",
+      "sprints_management_function"
+    ],
+    "ignore": [
+      ".output"
+    ],
+    "source": "functions"
+  },
+  "client": {
+    "source": "react-app",
+    "plugin": "zcatalyst-cli-plugin-react"
+  }
+}

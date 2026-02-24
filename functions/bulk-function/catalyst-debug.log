@@ -1,0 +1,578 @@
+[debug] [2025-09-23T07:01:47.342Z] : 
+[debug] [2025-09-23T07:01:47.346Z] : ----------------------------------------------------------------------
+[debug] [2025-09-23T07:01:47.346Z] : Command:      /usr/local/bin/node /usr/local/bin/catalyst serve
+[debug] [2025-09-23T07:01:47.346Z] : CLI Version:  1.20.2
+[debug] [2025-09-23T07:01:47.346Z] : Platform:     darwin
+[debug] [2025-09-23T07:01:47.346Z] : Node Version: v22.16.0
+[debug] [2025-09-23T07:01:47.346Z] : Time:         Tue Sep 23 2025 12:31:47 GMT+0530 (India Standard Time)
+[debug] [2025-09-23T07:01:47.346Z] : ----------------------------------------------------------------------
+[debug] [2025-09-23T07:01:47.347Z] : 
+[debug] [2025-09-23T07:01:47.545Z] : > authorizing via signed-in user option
+[debug] [2025-09-23T07:01:47.545Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-23T07:01:47.551Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2025-09-23T07:01:47.698Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 07:01:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-23T07:01:47.700Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2025-09-23T07:01:47.750Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 07:01:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-23T07:01:47.846Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-23T07:01:47.888Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 07:01:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-23T07:01:47.890Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-23T07:01:47.891Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-23T07:01:47.891Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-23T07:01:47.891Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-23T07:01:47.891Z] : unknown eol undefined hence skipping check
+[info] [2025-09-23T07:01:48.151Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[debug] [2025-09-23T07:01:52.414Z] : http port : '4000' is not available. Hence port '4001' will be used instead.
+[warn] [2025-09-23T07:01:52.431Z] : ⚠ skipping serve of function [sending_email] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[warn] [2025-09-23T07:01:52.431Z] : ⚠ skipping serve of function [send_remainder_function] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[info] [2025-09-23T07:01:52.575Z] : 
+[info] [2025-09-23T07:01:52.576Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-23T07:01:52.576Z] : ℹ authentication: http://localhost:3000/server/authentication/execute
+[info] [2025-09-23T07:01:52.576Z] : 
+[info] [2025-09-23T07:01:52.576Z] : 
+[info] [2025-09-23T07:01:52.576Z] :  >>>>>>>>>>>>> AdvancedIO <<<<<<<<<<<< 
+[info] [2025-09-23T07:01:52.576Z] : ℹ time_entry_management_application_function: http://localhost:3000/server/time_entry_management_application_function/
+[info] [2025-09-23T07:01:52.576Z] : ℹ bulk-function                             : http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:01:52.576Z] : 
+[info] [2025-09-23T07:03:40.133Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:03:40.323Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:03:40.893Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:03:40.893Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:04:03.450Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:04:03.569Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:04:04.124Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:04:04.124Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:05:42.725Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:05:42.950Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:05:43.623Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:05:43.624Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:07:01.853Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:07:01.982Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:07:02.502Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:07:02.502Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:10:35.614Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:10:35.787Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:10:36.381Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:10:36.381Z] : Waiting for correction..
+[info] [2025-09-23T07:10:36.381Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:10:40.966Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:10:41.074Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:10:41.455Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:10:41.456Z] : Waiting for correction..
+[info] [2025-09-23T07:10:41.456Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:11:01.457Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:11:01.641Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:11:02.094Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:11:02.094Z] : Waiting for correction..
+[info] [2025-09-23T07:11:02.094Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:13:07.048Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:13:07.258Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:13:08.052Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:13:08.054Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:13:16.245Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:13:16.357Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:13:16.954Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:13:16.954Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:14:57.979Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:14:58.090Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:14:58.769Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:14:58.769Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:18:29.224Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:18:29.473Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:18:30.140Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:18:30.140Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:19:18.248Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:19:18.509Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:19:19.146Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:19:19.146Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:19:32.801Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:19:32.921Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:19:33.484Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:19:33.484Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:20:46.246Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:20:46.369Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:20:46.961Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:20:46.961Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:20:54.325Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:20:54.430Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:20:55.006Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:20:55.006Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:25:23.244Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:25:23.354Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:25:23.747Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:25:23.747Z] : Waiting for correction..
+[info] [2025-09-23T07:25:23.747Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:26:16.257Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:26:16.494Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:26:17.091Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:26:17.091Z] : Waiting for correction..
+[info] [2025-09-23T07:26:17.091Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:26:25.041Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:26:25.229Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:26:25.944Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:26:25.944Z] : Waiting for correction..
+[info] [2025-09-23T07:26:25.944Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:27:08.417Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:27:08.649Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:27:09.157Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:27:09.157Z] : Waiting for correction..
+[info] [2025-09-23T07:27:09.157Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:28:39.615Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:28:39.794Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:28:40.362Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:28:40.362Z] : Waiting for correction..
+[info] [2025-09-23T07:28:40.362Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:28:49.816Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:28:50.056Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:28:50.511Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:28:50.511Z] : Waiting for correction..
+[info] [2025-09-23T07:28:50.511Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:30:00.589Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:30:00.891Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:30:01.532Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:30:01.532Z] : Waiting for correction..
+[info] [2025-09-23T07:30:01.532Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:30:50.208Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:30:50.449Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:30:51.406Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:30:51.407Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:31:12.546Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:31:12.674Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:31:13.247Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:31:13.247Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:31:23.789Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:31:23.888Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:31:24.416Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:31:24.416Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:34:38.278Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:34:38.631Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:34:39.472Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:34:39.472Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:36:26.473Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:36:26.753Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:36:27.592Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:36:27.593Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:39:13.111Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:39:13.324Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:39:13.753Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:39:13.753Z] : Waiting for correction..
+[info] [2025-09-23T07:39:13.753Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:39:45.799Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:39:45.987Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:39:46.594Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:39:46.594Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:42:26.508Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:42:26.769Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-23T07:42:27.297Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-23T07:42:27.297Z] : Waiting for correction..
+[info] [2025-09-23T07:42:27.298Z] : 
+(To exit, press ^C)
+[info] [2025-09-23T07:42:46.491Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:42:46.794Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:42:47.561Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:42:47.562Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:49:16.947Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:49:17.195Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:49:17.931Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:49:17.932Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T07:51:55.132Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T07:51:55.361Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T07:51:56.159Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T07:51:56.159Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[debug] [2025-09-23T09:18:01.439Z] : > refreshing access token <
+[debug] [2025-09-23T09:18:01.449Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-23T09:18:01.616Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 09:18:01 GMT","content-type":"application/json;charset=UTF-8","content-length":"2361","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-23T09:31:28.553Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T09:31:29.120Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T09:31:30.027Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T09:31:30.027Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T10:26:49.299Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T10:26:49.675Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T10:26:50.574Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T10:26:50.574Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T10:26:58.629Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T10:26:58.853Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T10:26:59.375Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T10:26:59.375Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-23T10:27:25.941Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T10:27:26.137Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T10:27:26.989Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T10:27:26.990Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[debug] [2025-09-23T10:32:19.799Z] : > refreshing access token <
+[debug] [2025-09-23T10:32:19.815Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-23T10:32:20.173Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 10:32:20 GMT","content-type":"application/json;charset=UTF-8","content-length":"2361","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-23T10:41:30.646Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-23T10:41:30.934Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-23T10:41:31.673Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-23T10:41:31.673Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[debug] [2025-09-23T17:23:18.445Z] : > refreshing access token <
+[debug] [2025-09-23T17:23:18.465Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-23T17:23:18.589Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Tue, 23 Sep 2025 17:23:18 GMT","content-type":"application/json;charset=UTF-8","content-length":"2361","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-24T04:08:08.093Z] : > refreshing access token <
+[debug] [2025-09-24T04:08:08.121Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-24T04:08:08.333Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 24 Sep 2025 04:08:08 GMT","content-type":"application/json;charset=UTF-8","content-length":"2361","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-24T04:15:44.224Z] : Shutting down server
+[info] [2025-09-24T04:15:45.377Z] : 
+[info] [2025-09-24T04:15:45.383Z] : ✔ Shutdown complete
+[debug] [2025-09-24T04:15:45.385Z] : NO ERRORS REGISTERED
+[debug] [2025-09-24T04:15:45.392Z] : EXEC ENDED with event: serve, message: success
+[debug] [2025-09-24T04:15:45.392Z] : TOTAL DURATION OF COMMAND EXEC : 76437843
+[error] [2025-09-24T04:15:45.451Z] : uncaughtException: ENOENT: no such file or directory, open '/var/folders/t3/b1tvrcw900nbpllzthp8lzx40000gn/T/.catalyst/catalyst-http-log.json'
+Error: ENOENT: no such file or directory, open '/var/folders/t3/b1tvrcw900nbpllzthp8lzx40000gn/T/.catalyst/catalyst-http-log.json'
+[error] [2025-09-24T04:15:45.461Z] : ✖ An unexpected error has occurred.
+[debug] [2025-09-24T04:15:45.461Z] : Error Stack: CatalystError: An unexpected error has occurred.
+    at exports.default (/usr/local/lib/node_modules/zcatalyst-cli/lib/errorOut.js:19:17)
+    at process.<anonymous> (/usr/local/lib/node_modules/zcatalyst-cli/lib/bin/catalyst.js:87:28)
+    at process.emit (node:events:530:35)
+    at process.processEmit [as emit] (/usr/local/lib/node_modules/zcatalyst-cli/node_modules/signal-exit/index.js:199:34)
+    at process._fatalException (node:internal/process/execution:154:25)
+[debug] [2025-09-24T04:15:45.461Z] : Original Error: Error: ENOENT: no such file or directory, open '/var/folders/t3/b1tvrcw900nbpllzthp8lzx40000gn/T/.catalyst/catalyst-http-log.json'
+[debug] [2025-09-24T04:15:45.461Z] : Error Status: 500
+[info] [2025-09-24T04:15:45.462Z] : Kindly contact Catalyst support [support@zohocatalyst.com] if you need any further assistance
+[debug] [2025-09-24T04:15:47.436Z] : 
+[debug] [2025-09-24T04:15:47.441Z] : ----------------------------------------------------------------------
+[debug] [2025-09-24T04:15:47.441Z] : Command:      /usr/local/bin/node /usr/local/bin/catalyst serve
+[debug] [2025-09-24T04:15:47.442Z] : CLI Version:  1.20.2
+[debug] [2025-09-24T04:15:47.442Z] : Platform:     darwin
+[debug] [2025-09-24T04:15:47.442Z] : Node Version: v22.16.0
+[debug] [2025-09-24T04:15:47.442Z] : Time:         Wed Sep 24 2025 09:45:47 GMT+0530 (India Standard Time)
+[debug] [2025-09-24T04:15:47.442Z] : ----------------------------------------------------------------------
+[debug] [2025-09-24T04:15:47.442Z] : 
+[debug] [2025-09-24T04:15:47.651Z] : > authorizing via signed-in user option
+[debug] [2025-09-24T04:15:47.651Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-24T04:15:47.656Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2025-09-24T04:15:47.786Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 24 Sep 2025 04:15:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-24T04:15:47.789Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2025-09-24T04:15:47.824Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 24 Sep 2025 04:15:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-24T04:15:47.942Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-24T04:15:47.981Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 24 Sep 2025 04:15:47 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-24T04:15:47.983Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-24T04:15:47.983Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-24T04:15:47.983Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-24T04:15:47.983Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-24T04:15:47.983Z] : unknown eol undefined hence skipping check
+[info] [2025-09-24T04:15:48.448Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[debug] [2025-09-24T04:15:52.972Z] : http port : '4000' is not available. Hence port '4001' will be used instead.
+[warn] [2025-09-24T04:15:52.990Z] : ⚠ skipping serve of function [sending_email] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[warn] [2025-09-24T04:15:52.990Z] : ⚠ skipping serve of function [send_remainder_function] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[info] [2025-09-24T04:15:53.131Z] : 
+[info] [2025-09-24T04:15:53.131Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-24T04:15:53.132Z] : ℹ authentication: http://localhost:3000/server/authentication/execute
+[info] [2025-09-24T04:15:53.132Z] : 
+[info] [2025-09-24T04:15:53.132Z] : 
+[info] [2025-09-24T04:15:53.132Z] :  >>>>>>>>>>>>> AdvancedIO <<<<<<<<<<<< 
+[info] [2025-09-24T04:15:53.132Z] : ℹ time_entry_management_application_function: http://localhost:3000/server/time_entry_management_application_function/
+[info] [2025-09-24T04:15:53.132Z] : ℹ bulk-function                             : http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:15:53.132Z] : 
+[info] [2025-09-24T04:27:41.554Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:27:41.821Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:27:42.486Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:27:42.486Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:35:21.703Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:35:21.965Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:35:22.589Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:35:22.589Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:36:08.875Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:36:09.002Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:36:09.571Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:36:09.571Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:36:37.278Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:36:37.390Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:36:37.918Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:36:37.918Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:38:11.644Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:38:11.750Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:38:12.375Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:38:12.375Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:38:26.496Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:38:26.595Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:38:27.122Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:38:27.122Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:38:58.815Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:38:58.972Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:38:59.962Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:38:59.962Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:39:02.943Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:39:03.054Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:39:03.523Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:39:03.524Z] : Waiting for correction..
+[info] [2025-09-24T04:39:03.524Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:39:19.205Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:39:19.433Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:39:20.046Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:39:20.046Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:41:07.207Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:41:07.375Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:41:08.034Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:41:08.034Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:41:43.302Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:41:43.412Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:41:43.947Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:41:43.947Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:41:57.816Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:41:58.019Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:41:58.557Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:41:58.557Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:42:27.820Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:42:27.962Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:42:28.502Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:42:28.502Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:42:37.917Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:42:38.117Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:42:38.788Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:42:38.788Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:43:03.527Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:43:03.685Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:43:04.045Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:43:04.045Z] : Waiting for correction..
+[info] [2025-09-24T04:43:04.045Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:43:36.662Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:43:36.937Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:43:37.379Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:43:37.379Z] : Waiting for correction..
+[info] [2025-09-24T04:43:37.379Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:44:45.245Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:44:45.481Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:44:46.031Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:44:46.031Z] : Waiting for correction..
+[info] [2025-09-24T04:44:46.031Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:45:24.428Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:45:24.624Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:45:25.224Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:45:25.227Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:45:48.760Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:45:48.874Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:45:49.399Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:45:49.400Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:45:51.289Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:45:51.386Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:45:51.907Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:45:51.907Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:47:12.405Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:47:12.601Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:47:12.997Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:47:12.997Z] : Waiting for correction..
+[info] [2025-09-24T04:47:12.997Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:47:17.148Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:47:17.260Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:47:17.666Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:47:17.666Z] : Waiting for correction..
+[info] [2025-09-24T04:47:17.667Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:47:43.838Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:47:44.027Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:47:44.705Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:47:44.705Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:47:54.062Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:47:54.168Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T04:47:54.580Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T04:47:54.580Z] : Waiting for correction..
+[info] [2025-09-24T04:47:54.580Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T04:48:00.823Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:48:00.920Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:48:01.470Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:48:01.470Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:49:34.185Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:49:34.297Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:49:35.037Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:49:35.037Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:51:00.768Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:51:00.893Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:51:01.420Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:51:01.420Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:55:05.780Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:55:05.998Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:55:06.802Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:55:06.802Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:55:40.236Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:55:40.432Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:55:41.054Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:55:41.054Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:55:55.400Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:55:55.564Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:55:56.168Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:55:56.169Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:57:18.002Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:57:18.114Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:57:18.656Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:57:18.656Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:58:13.547Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:58:13.651Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:58:14.189Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:58:14.189Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:59:18.365Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:59:18.589Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:59:19.452Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:59:19.452Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T04:59:50.870Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T04:59:51.076Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T04:59:51.872Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T04:59:51.872Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T05:00:35.915Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:00:36.124Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:00:36.786Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:00:36.786Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T05:01:28.340Z] : 
+change of controllers/BulkController.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:01:28.556Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:01:29.144Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:01:29.145Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T05:03:20.168Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:03:20.303Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:03:21.058Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:03:21.075Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T05:04:34.837Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:04:35.043Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:04:35.786Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:04:35.786Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[info] [2025-09-24T05:04:44.878Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:04:44.976Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[warn] [2025-09-24T05:04:45.390Z] : ⚠ target [bulk-function] is not a valid one reason : there was a Java compilation error
+[info] [2025-09-24T05:04:45.390Z] : Waiting for correction..
+[info] [2025-09-24T05:04:45.390Z] : 
+(To exit, press ^C)
+[info] [2025-09-24T05:04:50.427Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:04:50.517Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:04:51.082Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:04:51.082Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/
+[debug] [2025-09-24T05:47:56.530Z] : > refreshing access token <
+[debug] [2025-09-24T05:47:56.543Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-24T05:47:56.779Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 24 Sep 2025 05:47:56 GMT","content-type":"application/json;charset=UTF-8","content-length":"2361","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-24T05:49:55.756Z] : 
+change of Bulk.java in bulk-function detected. Preparing your function, please wait...
+[info] [2025-09-24T05:49:55.963Z] : Compiling /Users/fristineinfotech/Desktop/DSV/DSV360/functions/bulk-function/Bulk.java
+[info] [2025-09-24T05:49:56.698Z] : ℹ AdvancedIO[bulk-function]: ready!
+[info] [2025-09-24T05:49:56.698Z] : ℹ AdvancedIO[bulk-function]: http://localhost:3000/server/bulk-function/

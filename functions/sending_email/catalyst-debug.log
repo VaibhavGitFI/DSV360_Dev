@@ -1,0 +1,28 @@
+[debug] [2025-07-07T04:53:45.700Z] : 
+[debug] [2025-07-07T04:53:45.702Z] : ----------------------------------------------------------------------
+[debug] [2025-07-07T04:53:45.702Z] : Command:      /usr/local/bin/node /usr/local/bin/catalyst deploy --only functions:sending_email
+[debug] [2025-07-07T04:53:45.702Z] : CLI Version:  1.18.1
+[debug] [2025-07-07T04:53:45.702Z] : Platform:     darwin
+[debug] [2025-07-07T04:53:45.702Z] : Node Version: v22.16.0
+[debug] [2025-07-07T04:53:45.702Z] : Time:         Mon Jul 07 2025 10:23:45 GMT+0530 (India Standard Time)
+[debug] [2025-07-07T04:53:45.702Z] : ----------------------------------------------------------------------
+[debug] [2025-07-07T04:53:45.702Z] : 
+[debug] [2025-07-07T04:53:45.898Z] : > authorizing via signed-in user option
+[debug] [2025-07-07T04:53:45.899Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-07-07T04:53:45.904Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2025-07-07T04:53:46.008Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 07 Jul 2025 04:53:46 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-07T04:53:46.011Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2025-07-07T04:53:46.046Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 07 Jul 2025 04:53:46 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-07T04:53:46.054Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-07-07T04:53:46.090Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Mon, 07 Jul 2025 04:53:46 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-07-07T04:53:46.092Z] : unknown eol undefined hence skipping check

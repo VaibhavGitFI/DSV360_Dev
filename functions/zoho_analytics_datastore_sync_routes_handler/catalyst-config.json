@@ -1,0 +1,22 @@
+{
+	"deployment": {
+		"name": "zoho_analytics_datastore_sync_routes_handler",
+		"stack": "node16",
+		"type": "advancedio",
+		"env_variables": {
+			"CLIENT_SECRET": "4aa4cf841974ca7892568d8efdcdb369cc91693658",
+			"CODELIB_SECRET_KEY": "qweuruowurouwoeowueo",
+			"CLIENT_ID": "1000.MHJNQ4L3G2NIO4EBXKT86POD1WAI9J",
+			"AUTH_HOST": "https://accounts.zoho.in/oauth/v2/token",
+			"PROJECTS_AUTH_HOST": "https://accounts.zoho.in/oauth/v2/token",
+			"PROJECTS_CLIENT_ID": "1000.MHJNQ4L3G2NIO4EBXKT86POD1WAI9J",
+			"ENVIRONMENT": "DEVELOPMENT",
+			"REFRESH_TOKEN": "1000.844951d6d87c1fc75a8c257efa387419.83abf1a27a2e75872f3039ab07c6f496",
+			"PROJECTS_CLIENT_SECRET": "4aa4cf841974ca7892568d8efdcdb369cc91693658",
+			"PROJECTS_REFRESH_TOKEN": "1000.844951d6d87c1fc75a8c257efa387419.83abf1a27a2e75872f3039ab07c6f496"
+		}
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

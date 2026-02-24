@@ -1,0 +1,18 @@
+{
+	"deployment": {
+		"name": "zoho_analytics_datastore_sync_record_handler",
+		"stack": "node16",
+		"type": "event",
+		"env_variables": {
+			"WORKSPACE_ID": "461320000000005018",
+			"CLIENT_SECRET": "4aa4cf841974ca7892568d8efdcdb369cc91693658",
+			"ORG_ID": "60040288251",
+			"CLIENT_ID": "1000.MHJNQ4L3G2NIO4EBXKT86POD1WAI9J",
+			"Time_Entries_VIEW_ID": "461320000000005002",
+			"REFRESH_TOKEN": "1000.32ba0140419620e17bd6f71cabda1a1a.1f9f65e5c8beacd3163eae3a3fcba79a"
+		}
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

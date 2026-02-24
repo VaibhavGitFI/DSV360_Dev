@@ -1,0 +1,167 @@
+[debug] [2025-06-19T07:40:59.242Z] : 
+[debug] [2025-06-19T07:40:59.246Z] : ----------------------------------------------------------------------
+[debug] [2025-06-19T07:40:59.246Z] : Command:      /usr/local/bin/node /usr/local/bin/catalyst functions:shell
+[debug] [2025-06-19T07:40:59.246Z] : CLI Version:  1.18.1
+[debug] [2025-06-19T07:40:59.246Z] : Platform:     darwin
+[debug] [2025-06-19T07:40:59.247Z] : Node Version: v20.15.0
+[debug] [2025-06-19T07:40:59.247Z] : Time:         Thu Jun 19 2025 13:10:59 GMT+0530 (India Standard Time)
+[debug] [2025-06-19T07:40:59.247Z] : ----------------------------------------------------------------------
+[debug] [2025-06-19T07:40:59.247Z] : 
+[debug] [2025-06-19T07:40:59.437Z] : > authorizing via signed-in user option
+[debug] [2025-06-19T07:40:59.437Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-06-19T07:40:59.443Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2025-06-19T07:40:59.661Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:40:59 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:40:59.663Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2025-06-19T07:40:59.726Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:40:59 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:40:59.812Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-06-19T07:40:59.882Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:40:59 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:40:59.884Z] : unknown eol undefined hence skipping check
+[debug] [2025-06-19T07:40:59.885Z] : unknown eol undefined hence skipping check
+[debug] [2025-06-19T07:40:59.885Z] : unknown eol undefined hence skipping check
+[warn] [2025-06-19T07:41:00.068Z] : ⚠ target [time_entry_management_application_function] is not a valid one reason : invalid function type. Only basicio,cron,event,integration,job are supported.
+[info] [2025-06-19T07:41:07.317Z] : Generating new access token...
+
+[info] [2025-06-19T07:41:08.166Z] : 📧 Sending email to: aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:41:08.166Z] : ✅ Email sent to aman.thakare@fristinetech.com
+📧 Sending email to: viral@fristinetech.com
+✅ Email sent to viral@fristinetech.com
+📧 Sending email to: dev@fristinetech.com
+✅ Email sent to dev@fristinetech.com
+📧 Sending email to: abhijeet@fristinetech.com
+✅ Email sent to abhijeet@fristinetech.com
+
+[info] [2025-06-19T07:41:08.167Z] : 📧 Sending email to: ankit@dsvcorp.com.au
+✅ Email sent to ankit@dsvcorp.com.au
+
+[info] [2025-06-19T07:41:08.546Z] : ❌ Error processing page 1: Request failed with status 404 and code : INVALID_ID , message : No such resource with the given id exists
+[debug] [2025-06-19T07:41:08.557Z] : local fn slave exit: 0, null
+[info] [2025-06-19T07:41:08.558Z] : [CLI] Function send_remainder_function execution complete
+[info] [2025-06-19T07:41:08.558Z] : 
+[info] [2025-06-19T07:41:08.561Z] : [status - send_remainder_function] FAILURE
+[info] [2025-06-19T07:42:01.934Z] : 
+change of index.js in send_remainder_function detected. Preparing your function, please wait...
+[info] [2025-06-19T07:42:02.153Z] : ℹ functions[send_remainder_function]: ready!
+[info] [2025-06-19T07:43:17.770Z] : 
+change of index.js in send_remainder_function detected. Preparing your function, please wait...
+[info] [2025-06-19T07:43:17.980Z] : ℹ functions[send_remainder_function]: ready!
+[info] [2025-06-19T07:43:38.469Z] : 
+change of index.js in send_remainder_function detected. Preparing your function, please wait...
+[info] [2025-06-19T07:43:38.660Z] : ℹ functions[send_remainder_function]: ready!
+[info] [2025-06-19T07:43:41.416Z] : 📧 Sending email to: aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:43:41.416Z] : ✅ Email sent to aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:43:41.417Z] : 📧 Sending email to: viral@fristinetech.com
+✅ Email sent to viral@fristinetech.com
+📧 Sending email to: dev@fristinetech.com
+✅ Email sent to dev@fristinetech.com
+📧 Sending email to: abhijeet@fristinetech.com
+✅ Email sent to abhijeet@fristinetech.com
+
+[info] [2025-06-19T07:43:41.417Z] : 📧 Sending email to: ankit@dsvcorp.com.au
+✅ Email sent to ankit@dsvcorp.com.au
+
+[info] [2025-06-19T07:43:41.670Z] : ❌ Error processing page 1: Request failed with status 404 and code : INVALID_ID , message : No such resource with the given id exists
+[debug] [2025-06-19T07:43:41.677Z] : local fn slave exit: 0, null
+[info] [2025-06-19T07:43:41.677Z] : [CLI] Function send_remainder_function execution complete
+[info] [2025-06-19T07:43:41.677Z] : 
+[info] [2025-06-19T07:43:41.679Z] : [status - send_remainder_function] FAILURE
+[info] [2025-06-19T07:44:56.739Z] : 
+change of index.js in send_remainder_function detected. Preparing your function, please wait...
+[info] [2025-06-19T07:44:57.077Z] : ℹ functions[send_remainder_function]: ready!
+[info] [2025-06-19T07:44:59.451Z] : 📧 Sending email to: aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:44:59.452Z] : ✅ Email sent to aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:44:59.452Z] : 📧 Sending email to: viral@fristinetech.com
+✅ Email sent to viral@fristinetech.com
+📧 Sending email to: dev@fristinetech.com
+✅ Email sent to dev@fristinetech.com
+📧 Sending email to: abhijeet@fristinetech.com
+✅ Email sent to abhijeet@fristinetech.com
+
+[info] [2025-06-19T07:44:59.453Z] : 📧 Sending email to: ankit@dsvcorp.com.au
+✅ Email sent to ankit@dsvcorp.com.au
+
+[info] [2025-06-19T07:44:59.663Z] : ❌ Error processing page 1: Request failed with status 404 and code : INVALID_ID , message : No such resource with the given id exists
+[debug] [2025-06-19T07:44:59.668Z] : local fn slave exit: 0, null
+[info] [2025-06-19T07:44:59.669Z] : [CLI] Function send_remainder_function execution complete
+[info] [2025-06-19T07:44:59.669Z] : 
+[info] [2025-06-19T07:44:59.671Z] : [status - send_remainder_function] FAILURE
+[info] [2025-06-19T07:50:55.130Z] : 📧 Sending email to: aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:50:55.133Z] : ✅ Email sent to aman.thakare@fristinetech.com
+
+[info] [2025-06-19T07:50:55.133Z] : 📧 Sending email to: viral@fristinetech.com
+✅ Email sent to viral@fristinetech.com
+📧 Sending email to: dev@fristinetech.com
+✅ Email sent to dev@fristinetech.com
+📧 Sending email to: abhijeet@fristinetech.com
+✅ Email sent to abhijeet@fristinetech.com
+
+[info] [2025-06-19T07:50:55.134Z] : 📧 Sending email to: ankit@dsvcorp.com.au
+✅ Email sent to ankit@dsvcorp.com.au
+
+[info] [2025-06-19T07:50:55.376Z] : ✅ Inserted 5 analytics records for page 1
+
+[info] [2025-06-19T07:50:55.400Z] : ========REPORT========
+
+[info] [2025-06-19T07:50:55.400Z] : Total Users Processed: 5
+
+[info] [2025-06-19T07:50:55.401Z] : ✅ Emails Sent Successfully:  5
+❌ Failed Emails: 0
+======================
+
+[info] [2025-06-19T07:50:55.497Z] : ✅ Scheduled Job_Page_2
+
+[debug] [2025-06-19T07:50:55.502Z] : local fn slave exit: 0, null
+[info] [2025-06-19T07:50:55.502Z] : [CLI] Function send_remainder_function execution complete
+[info] [2025-06-19T07:50:55.502Z] : 
+[info] [2025-06-19T07:50:55.504Z] : [status - send_remainder_function] SUCCESS
+[info] [2025-06-19T07:52:21.273Z] : 
+[info] [2025-06-19T07:52:21.275Z] : ✔ shell complete
+[debug] [2025-06-19T07:52:21.276Z] : NO ERRORS REGISTERED
+[debug] [2025-06-19T07:52:21.276Z] : EXEC ENDED with event: functions:shell, message: success
+[debug] [2025-06-19T07:52:21.276Z] : TOTAL DURATION OF COMMAND EXEC : 681842
+[debug] [2025-06-19T07:52:21.283Z] : >>>> HTTP REQUEST : POST https://api.catalyst.zoho.in/baas/v1/cli/logs 
+<request body omitted>
+
+[debug] [2025-06-19T07:52:38.303Z] : 
+[debug] [2025-06-19T07:52:38.307Z] : ----------------------------------------------------------------------
+[debug] [2025-06-19T07:52:38.307Z] : Command:      /usr/local/bin/node /usr/local/bin/catalyst deploy --only functions:send_remainder_function
+[debug] [2025-06-19T07:52:38.307Z] : CLI Version:  1.18.1
+[debug] [2025-06-19T07:52:38.307Z] : Platform:     darwin
+[debug] [2025-06-19T07:52:38.307Z] : Node Version: v20.15.0
+[debug] [2025-06-19T07:52:38.308Z] : Time:         Thu Jun 19 2025 13:22:38 GMT+0530 (India Standard Time)
+[debug] [2025-06-19T07:52:38.308Z] : ----------------------------------------------------------------------
+[debug] [2025-06-19T07:52:38.308Z] : 
+[debug] [2025-06-19T07:52:38.498Z] : > authorizing via signed-in user option
+[debug] [2025-06-19T07:52:38.498Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.webapp.ALL","ZohoCatalyst.appsail.Update"]
+[debug] [2025-06-19T07:52:38.504Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2025-06-19T07:52:38.749Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:52:38 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:52:38.758Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2025-06-19T07:52:38.831Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:52:38 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:52:38.837Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-06-19T07:52:38.930Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 19 Jun 2025 07:52:38 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-06-19T07:52:38.933Z] : unknown eol undefined hence skipping check

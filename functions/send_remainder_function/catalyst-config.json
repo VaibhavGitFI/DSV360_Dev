@@ -1,0 +1,11 @@
+{
+	"execution": {
+		"main": "index.js"
+	},
+	"deployment": {
+		"stack": "node20",
+		"name": "send_remainder_function",
+		"type": "job",
+		"env_variables": {}
+	}
+}

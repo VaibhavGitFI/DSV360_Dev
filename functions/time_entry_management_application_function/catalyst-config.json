@@ -1,0 +1,13 @@
+{
+	"deployment": {
+		"name": "time_entry_management_application_function",
+		"stack": "node20",
+		"type": "advancedio",
+		"env_variables": {
+			"Allowed_IP": "{1234,5456,4567}"
+		}
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"deployment": {
+		"name": "bulk-function",
+		"stack": "java8",
+		"type": "advancedio",
+		"env_variables": {
+			"Environment": "Development"
+		}
+	},
+	"execution": {
+		"main": "Bulk"
+	}
+}
