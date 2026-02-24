@@ -1,0 +1,74 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@faker-js/faker": "^9.9.0",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/lab": "^7.0.0",
+    "@mui/material": "^7.0.0",
+    "@mui/x-charts": "^7.25.0",
+    "@mui/x-date-pickers": "^7.23.3",
+    "@mui/x-date-pickers-pro": "^8.15.0",
+    "@reduxjs/toolkit": "^2.6.1",
+    "@tabler/icons-react": "^3.36.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@toolpad/core": "^0.16.0",
+    "antd": "^5.24.2",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.7",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.18",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.548.0",
+    "primereact": "^10.9.4",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.0.0",
+    "react-router-dom": "^7.0.0",
+    "react-scripts": "5.0.1",
+    "react-spinners": "^0.16.1",
+    "recharts": "^3.1.0",
+    "redux": "^5.0.1",
+    "tailwind-merge": "^3.4.0",
+    "url": "^0.11.4",
+    "web-vitals": "^1.1.2",
+    "xlsx": "^0.18.5",
+    "zcatalyst-cli-plugin-react": "^0.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
