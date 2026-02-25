@@ -1,0 +1,260 @@
+[debug] [2026-02-25T03:57:49.244Z] : 
+[debug] [2026-02-25T03:57:49.246Z] : ----------------------------------------------------------------------
+[debug] [2026-02-25T03:57:49.246Z] : Command:      /Users/fristineinfotech/.nvm/versions/node/v24.12.0/bin/node /Users/fristineinfotech/.nvm/versions/node/v24.12.0/bin/catalyst serve
+[debug] [2026-02-25T03:57:49.246Z] : CLI Version:  1.24.0
+[debug] [2026-02-25T03:57:49.246Z] : Platform:     darwin
+[debug] [2026-02-25T03:57:49.246Z] : Node Version: v24.12.0
+[debug] [2026-02-25T03:57:49.246Z] : Time:         Wed Feb 25 2026 09:27:49 GMT+0530 (India Standard Time)
+[debug] [2026-02-25T03:57:49.246Z] : ----------------------------------------------------------------------
+[debug] [2026-02-25T03:57:49.246Z] : 
+[debug] [2026-02-25T03:57:49.573Z] : > authorizing via signed-in user option
+[debug] [2026-02-25T03:57:49.574Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2026-02-25T03:57:49.578Z] : > refreshing access token <
+[debug] [2026-02-25T03:57:49.579Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2026-02-25T03:57:49.693Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 03:57:49 GMT","content-type":"application/json;charset=UTF-8","content-length":"2442","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2026-02-25T03:57:49.704Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195 
+
+[debug] [2026-02-25T03:57:49.809Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 03:57:49 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2026-02-25T03:57:49.810Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/environment 
+
+[debug] [2026-02-25T03:57:49.843Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 03:57:49 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2026-02-25T03:57:49.891Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/get-details 
+Query params: {"feature_name":"runtime"}
+
+[debug] [2026-02-25T03:57:49.912Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 03:57:49 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2026-02-25T03:57:49.913Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/17682000000037195/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2026-02-25T03:57:49.958Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 03:57:49 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2026-02-25T03:57:49.964Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.964Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.964Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.964Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:49.965Z] : unknown eol undefined hence skipping check
+[debug] [2026-02-25T03:57:50.011Z] : Error ensuring java:  CatalystError: Unable to detect the java version for stack: java8
+    at /Users/fristineinfotech/.nvm/versions/node/v24.12.0/lib/node_modules/zcatalyst-cli/lib/fn-utils/lib/java/ensure-java-userconfig.js:119:23
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/fristineinfotech/.nvm/versions/node/v24.12.0/lib/node_modules/zcatalyst-cli/lib/fn-utils/lib/java/ensure-java-userconfig.js:5:58) {
+  status: 500,
+  exit: 1,
+  original: undefined,
+  context: undefined,
+  errorId: 'JAVA_CONFIG-1',
+  arg: [ 'java8' ],
+  skipHelp: false,
+  filePath: '/Users/fristineinfotech/.nvm/versions/node/v24.12.0/lib/node_modules/zcatalyst-cli/lib/docs/fn-utils/lib/java/ensure-java-userconfig'
+}
+[debug] [2026-02-25T03:57:54.169Z] : http port : '4000' is not available. Hence port '4001' will be used instead.
+[debug] [2026-02-25T03:57:54.170Z] : http port : '4000' is not available. Hence port '4002' will be used instead.
+[debug] [2026-02-25T03:57:54.170Z] : http port : '4000' is not available. Hence port '4003' will be used instead.
+[warn] [2026-02-25T03:57:54.198Z] : ⚠ skipping serve of function [bulk-function] since Unable to detect the java version for stack: java8
+[warn] [2026-02-25T03:57:54.198Z] : ⚠ skipping serve of function [zoho_analytics_datastore_sync_record_handler] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[warn] [2026-02-25T03:57:54.199Z] : ⚠ skipping serve of function [stop_timer_function] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[warn] [2026-02-25T03:57:54.199Z] : ⚠ skipping serve of function [sending_email] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[warn] [2026-02-25T03:57:54.199Z] : ⚠ skipping serve of function [send_remainder_function] since invalid function type. Only basicio,advancedio,browser_logic are supported.
+[debug] [2026-02-25T03:57:54.304Z] : http port : '5000' is not available. Hence port '5001' will be used instead.
+[info] [2026-02-25T03:57:55.489Z] : [react-plugin]: Starting the development server...
+
+[info] [2026-02-25T03:57:55.490Z] : 
+[info] [2026-02-25T03:57:55.490Z] : ℹ Client[react-app]: Plugin : "zcatalyst-cli-plugin-react" is used for client serve
+[info] [2026-02-25T03:57:55.490Z] : 
+[info] [2026-02-25T03:57:56.130Z] : Skipping API Gateway rules
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:56.131Z] :  >>>>>>>>>>>>>> Basic I/O <<<<<<<<<<<<< 
+[info] [2026-02-25T03:57:56.131Z] : ℹ authentication: http://localhost:3000/server/authentication/execute
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:56.131Z] :  >>>>>>>>>>>>> Advanced I/O <<<<<<<<<<< 
+[info] [2026-02-25T03:57:56.131Z] : ℹ time_entry_management_application_function  : http://localhost:3000/server/time_entry_management_application_function/
+[info] [2026-02-25T03:57:56.131Z] : ℹ ai_service                                  : http://localhost:3000/server/ai_service/
+[info] [2026-02-25T03:57:56.131Z] : ℹ zoho_analytics_datastore_sync_routes_handler: http://localhost:3000/server/zoho_analytics_datastore_sync_routes_handler/
+[info] [2026-02-25T03:57:56.131Z] : ℹ sprints_management_function                 : http://localhost:3000/server/sprints_management_function/
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:56.131Z] :  >>>>>>>>>>>>> Web Client <<<<<<<<<<<<
+[info] [2026-02-25T03:57:56.131Z] : ℹ client[react-app]: http://localhost:3000/app/
+[info] [2026-02-25T03:57:56.131Z] : 
+[info] [2026-02-25T03:57:58.208Z] : [1771991878208]  "GET"  "/app/index.html"
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: Compiled successfully!
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: 
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: You can now view react-app in the browser.
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: 
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]:   Local:            http://localhost:3000/app/
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]:   On Your Network:  http://192.168.20.30:3000/app/
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: 
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: Note that the development build is not optimized.
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: To create a production build, use npm run build.
+[info] [2026-02-25T03:58:05.453Z] : [react-plugin]: 
+[info] [2026-02-25T03:58:06.262Z] : [1771991886262]  "GET"  "/__catalyst/sdk/init.js"
+[info] [2026-02-25T03:58:06.283Z] : [1771991886283]  "GET"  "/app/static/js/bundle.js"
+[info] [2026-02-25T03:58:08.351Z] : [1771991888351]  "GET"  "/app/manifest.json"
+[info] [2026-02-25T03:58:08.915Z] : [1771991888915]  "GET"  "/baas/v1/project/17682000000037195/project-user/current"
+[info] [2026-02-25T03:58:08.918Z] : [1771991888918]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T03:58:08.924Z] : [1771991888924]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T03:58:09.181Z] : [1771991889180]  "GET"  "/server/time_entry_management_application_function/org/50026358236"
+[info] [2026-02-25T03:58:09.201Z] : [1771991889201]  "GET"  "/app/static/media/FI_logo.c192ccd848b7916a6543.png"
+[info] [2026-02-25T03:58:09.270Z] : [1771991889270]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T03:58:09.271Z] : [1771991889271]  "GET"  "/server/time_entry_management_application_function/projects"
+[info] [2026-02-25T03:58:09.271Z] : [1771991889271]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T03:58:09.272Z] : [1771991889272]  "GET"  "/server/sprints_management_function/sprints?projectId=17682000000770727"
+[info] [2026-02-25T03:58:09.272Z] : [1771991889272]  "GET"  "/server/sprints_management_function/hierarchy?projectId=17682000000770727"
+[info] [2026-02-25T03:58:09.970Z] : [1771991889970]  "GET"  "/server/time_entry_management_application_function/userprofile/17682000000045367"
+[info] [2026-02-25T03:58:10.054Z] : [1771991890054]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T03:58:10.060Z] : [1771991890059]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T03:58:10.108Z] : [1771991890108]  "GET"  "/server/time_entry_management_application_function/usercover/17682000000045367"
+[info] [2026-02-25T03:58:10.473Z] : [1771991890473]  "POST"  "/server/time_entry_management_application_function/batchProfile"
+[info] [2026-02-25T03:58:18.257Z] : [1771991898257]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T03:59:07.862Z] : [1771991947862]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:03:00.341Z] : [1771992180338]  "GET"  "/app/index.html"
+[info] [2026-02-25T04:03:00.400Z] : [1771992180399]  "GET"  "/__catalyst/sdk/init.js"
+[info] [2026-02-25T04:03:00.421Z] : [1771992180421]  "GET"  "/app/static/js/bundle.js"
+[info] [2026-02-25T04:03:00.860Z] : [1771992180860]  "GET"  "/app/manifest.json"
+[info] [2026-02-25T04:03:00.864Z] : [1771992180864]  "GET"  "/baas/v1/project/17682000000037195/project-user/current"
+[info] [2026-02-25T04:03:00.868Z] : [1771992180868]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T04:03:00.897Z] : [1771992180897]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T04:03:01.037Z] : [1771992181037]  "GET"  "/server/time_entry_management_application_function/org/50026358236"
+[info] [2026-02-25T04:03:01.043Z] : [1771992181043]  "GET"  "/app/static/media/FI_logo.c192ccd848b7916a6543.png"
+[info] [2026-02-25T04:03:01.087Z] : [1771992181087]  "GET"  "/server/time_entry_management_application_function/projects"
+[info] [2026-02-25T04:03:01.089Z] : [1771992181088]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:03:01.089Z] : [1771992181089]  "GET"  "/server/sprints_management_function/sprints?projectId=17682000000770727"
+[info] [2026-02-25T04:03:01.090Z] : [1771992181090]  "GET"  "/server/sprints_management_function/hierarchy?projectId=17682000000770727"
+[info] [2026-02-25T04:03:01.090Z] : [1771992181090]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T04:03:01.275Z] : [1771992181274]  "GET"  "/server/time_entry_management_application_function/userprofile/17682000000045367"
+[info] [2026-02-25T04:03:01.390Z] : [1771992181390]  "GET"  "/server/time_entry_management_application_function/usercover/17682000000045367"
+[info] [2026-02-25T04:03:01.420Z] : [1771992181420]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T04:03:01.508Z] : [1771992181508]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:03:01.595Z] : [1771992181594]  "POST"  "/server/time_entry_management_application_function/batchProfile"
+[info] [2026-02-25T04:06:16.755Z] : [1771992376751]  "POST"  "/server/sprints_management_function/epics"
+[info] [2026-02-25T04:08:08.397Z] : [1771992488396]  "POST"  "/server/sprints_management_function/stories"
+[info] [2026-02-25T04:08:11.040Z] : [1771992491040]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:21.533Z] : [1771992501532]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:21.742Z] : [1771992501742]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:21.920Z] : [1771992501920]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:23.743Z] : [1771992503743]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:23.888Z] : [1771992503887]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:24.063Z] : [1771992504063]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:29.999Z] : [1771992509999]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:31.179Z] : [1771992511179]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:33.648Z] : [1771992513648]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:33.842Z] : [1771992513842]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:33.970Z] : [1771992513970]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:35.826Z] : [1771992515826]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:36.017Z] : [1771992516017]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:36.156Z] : [1771992516156]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:38.683Z] : [1771992518683]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:39.814Z] : [1771992519814]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:43.244Z] : [1771992523244]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:44.700Z] : [1771992524699]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:45.975Z] : [1771992525975]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:08:52.350Z] : [1771992532350]  "GET"  "/server/time_entry_management_application_function/clientOrg"
+[info] [2026-02-25T04:08:52.352Z] : [1771992532351]  "GET"  "/server/time_entry_management_application_function/issue"
+[info] [2026-02-25T04:08:52.353Z] : [1771992532353]  "GET"  "/server/time_entry_management_application_function/tasks"
+[info] [2026-02-25T04:08:53.328Z] : [1771992533328]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:08:57.328Z] : [1771992537328]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:09:26.260Z] : [1771992566250]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:35:38.834Z] : [1771994138832]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:36:29.575Z] : [1771994189574]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.595Z] : [1771994189595]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.676Z] : [1771994189676]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.763Z] : [1771994189762]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.843Z] : [1771994189843]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.941Z] : [1771994189940]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:29.997Z] : [1771994189997]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:30.055Z] : [1771994190055]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:30.814Z] : [1771994190814]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:30.816Z] : [1771994190816]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:30.817Z] : [1771994190817]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.514Z] : [1771994191514]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.543Z] : [1771994191543]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.560Z] : [1771994191560]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.576Z] : [1771994191575]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.642Z] : [1771994191642]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.675Z] : [1771994191675]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.745Z] : [1771994191745]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.771Z] : [1771994191771]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.822Z] : [1771994191822]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.840Z] : [1771994191840]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.910Z] : [1771994191910]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.956Z] : [1771994191955]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:31.965Z] : [1771994191965]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:32.012Z] : [1771994192012]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:32.077Z] : [1771994192077]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:32.739Z] : [1771994192738]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:36:34.001Z] : [1771994194001]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:36:40.062Z] : [1771994200062]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:42.142Z] : [1771994202142]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:48.078Z] : [1771994208077]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:36:48.232Z] : [1771994208232]  "PATCH"  "/server/sprints_management_function/stories/17682000000816757"
+[info] [2026-02-25T04:42:06.718Z] : [1771994526717]  "GET"  "/app/index.html"
+[info] [2026-02-25T04:42:06.763Z] : [1771994526763]  "GET"  "/__catalyst/sdk/init.js"
+[info] [2026-02-25T04:42:06.767Z] : [1771994526767]  "GET"  "/app/static/js/bundle.js"
+[info] [2026-02-25T04:42:07.146Z] : [1771994527146]  "GET"  "/app/manifest.json"
+[info] [2026-02-25T04:42:07.666Z] : [1771994527666]  "GET"  "/baas/v1/project/17682000000037195/project-user/current"
+[info] [2026-02-25T04:42:07.670Z] : [1771994527669]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T04:42:07.675Z] : [1771994527675]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T04:42:07.842Z] : [1771994527842]  "GET"  "/server/time_entry_management_application_function/org/50026358236"
+[info] [2026-02-25T04:42:07.860Z] : [1771994527860]  "GET"  "/app/static/media/FI_logo.c192ccd848b7916a6543.png"
+[info] [2026-02-25T04:42:07.914Z] : [1771994527914]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:42:07.916Z] : [1771994527915]  "GET"  "/server/time_entry_management_application_function/projects"
+[info] [2026-02-25T04:42:07.917Z] : [1771994527917]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T04:42:07.918Z] : [1771994527918]  "GET"  "/server/sprints_management_function/sprints?projectId=17682000000770727"
+[info] [2026-02-25T04:42:07.919Z] : [1771994527919]  "GET"  "/server/sprints_management_function/hierarchy?projectId=17682000000770727"
+[info] [2026-02-25T04:42:08.061Z] : [1771994528060]  "GET"  "/server/time_entry_management_application_function/userprofile/17682000000045367"
+[info] [2026-02-25T04:42:08.191Z] : [1771994528190]  "GET"  "/server/time_entry_management_application_function/usercover/17682000000045367"
+[info] [2026-02-25T04:42:08.304Z] : [1771994528304]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T04:42:08.480Z] : [1771994528480]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T04:42:08.521Z] : [1771994528521]  "POST"  "/server/time_entry_management_application_function/batchProfile"
+[info] [2026-02-25T04:42:17.639Z] : [1771994537639]  "GET"  "/server/time_entry_management_application_function/contact"
+[info] [2026-02-25T04:42:17.640Z] : [1771994537640]  "GET"  "/server/time_entry_management_application_function/clientOrg"
+[info] [2026-02-25T04:44:05.845Z] : [1771994645844]  "GET"  "/server/time_entry_management_application_function/tasks"
+[info] [2026-02-25T04:44:59.371Z] : [1771994699370]  "POST"  "/server/time_entry_management_application_function/createClient"
+[info] [2026-02-25T04:45:45.050Z] : [1771994745050]  "POST"  "/server/time_entry_management_application_function/addContact"
+[info] [2026-02-25T05:55:51.809Z] : [1771998951806]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[debug] [2026-02-25T05:55:51.833Z] : > refreshing access token <
+[debug] [2026-02-25T05:55:51.915Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.in/oauth/v2/token 
+<request body omitted>
+
+[debug] [2026-02-25T05:55:52.128Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Wed, 25 Feb 2026 05:55:52 GMT","content-type":"application/json;charset=UTF-8","content-length":"2442","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2026-02-25T05:55:52.709Z] : [1771998952708]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T05:55:53.878Z] : [1771998953877]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T05:58:25.257Z] : [1771999105257]  "GET"  "/server/sprints_management_function/sprints?projectId=17682000000804978"
+[info] [2026-02-25T05:58:25.259Z] : [1771999105259]  "GET"  "/server/sprints_management_function/hierarchy?projectId=17682000000804978"
+[info] [2026-02-25T05:58:25.909Z] : [1771999105909]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T05:58:29.694Z] : [1771999109694]  "GET"  "/app/index.html"
+[info] [2026-02-25T05:58:29.726Z] : [1771999109726]  "GET"  "/__catalyst/sdk/init.js"
+[info] [2026-02-25T05:58:29.730Z] : [1771999109730]  "GET"  "/app/static/js/bundle.js"
+[info] [2026-02-25T05:58:30.402Z] : [1771999110402]  "GET"  "/app/manifest.json"
+[info] [2026-02-25T05:58:30.412Z] : [1771999110412]  "GET"  "/baas/v1/project/17682000000037195/project-user/current"
+[info] [2026-02-25T05:58:30.414Z] : [1771999110414]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T05:58:30.416Z] : [1771999110416]  "GET"  "/app/logo192.png"
+[info] [2026-02-25T05:58:30.669Z] : [1771999110669]  "GET"  "/server/time_entry_management_application_function/org/50026358236"
+[info] [2026-02-25T05:58:30.691Z] : [1771999110691]  "GET"  "/app/static/media/FI_logo.c192ccd848b7916a6543.png"
+[info] [2026-02-25T05:58:30.738Z] : [1771999110738]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T05:58:30.740Z] : [1771999110740]  "GET"  "/server/time_entry_management_application_function/projects"
+[info] [2026-02-25T05:58:30.741Z] : [1771999110741]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T05:58:30.742Z] : [1771999110742]  "GET"  "/server/sprints_management_function/sprints?projectId=17682000000804978"
+[info] [2026-02-25T05:58:30.744Z] : [1771999110744]  "GET"  "/server/sprints_management_function/hierarchy?projectId=17682000000804978"
+[info] [2026-02-25T05:58:30.821Z] : [1771999110821]  "GET"  "/server/time_entry_management_application_function/userprofile/17682000000045367"
+[info] [2026-02-25T05:58:30.977Z] : [1771999110977]  "GET"  "/server/time_entry_management_application_function/usercover/17682000000045367"
+[info] [2026-02-25T05:58:31.047Z] : [1771999111047]  "GET"  "/server/time_entry_management_application_function/timeentry/timer?User_ID=17682000000045367"
+[info] [2026-02-25T05:58:31.293Z] : [1771999111293]  "GET"  "/server/time_entry_management_application_function/employee"
+[info] [2026-02-25T05:58:31.523Z] : [1771999111523]  "POST"  "/server/time_entry_management_application_function/batchProfile"

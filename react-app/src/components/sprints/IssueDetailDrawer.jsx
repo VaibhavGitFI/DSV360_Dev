@@ -26,6 +26,7 @@ const IssueDetailDrawer = ({
   TaskStatus,
   addTaskToStory,
   addSubTaskToTask,
+  updateStoryMeta,
   projectId,
   projectName,
   isEmployee,
@@ -267,16 +268,24 @@ const IssueDetailDrawer = ({
   const statusColor = (st) => {
     switch (st) {
       case TaskStatus.TODO:
+      case TaskStatus.NOT_STARTED:
         return C.todo;
       case TaskStatus.IN_PROGRESS:
+      case TaskStatus.WIP:
         return C.prog;
       case TaskStatus.CODE_REVIEW:
+      case TaskStatus.UNDER_INTERNAL_TESTING:
         return C.rev;
       case TaskStatus.QA:
+      case TaskStatus.RELEASED_FOR_UAT:
         return C.qa;
       case TaskStatus.BLOCKED:
+      case TaskStatus.PENDING_FROM_ZOHO:
+      case TaskStatus.PENDING_FROM_CLIENT:
         return C.blocked;
       case TaskStatus.DONE:
+      case TaskStatus.UAT_APPROVED_BY_CLIENT:
+      case TaskStatus.CLOSED:
         return C.done;
       default:
         return mode === "dark" ? "#FFFFFF" : "#000000";
@@ -573,8 +582,195 @@ const IssueDetailDrawer = ({
 
               <div style={card}>
                 <p style={{ margin: 0, color: C.text, fontWeight: 700, fontStyle: "italic", lineHeight: 1.6 }}>
-                  “{selectedStory.description || "No description"}”
+                  "{selectedStory.description || "No description"}"
                 </p>
+              </div>
+
+              {/* ── New Fields Section ── */}
+              <div style={{ marginTop: 18 }}>
+                <div style={label}>Details</div>
+                <div style={{ ...card, display: "flex", flexDirection: "column", gap: 10 }}>
+                  {/* Row 1: Group Name + Module Name */}
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Group Name</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <input
+                          value={selectedStory.groupName || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { groupName: e.target.value })}
+                          placeholder="—"
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        />
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{selectedStory.groupName || "—"}</span>
+                      )}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Module Name</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <input
+                          value={selectedStory.moduleName || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { moduleName: e.target.value })}
+                          placeholder="—"
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        />
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{selectedStory.moduleName || "—"}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Row 2: Requirement Type + Billing Type */}
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Requirement Type</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <select
+                          value={selectedStory.requirementType || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { requirementType: e.target.value })}
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        >
+                          <option value="">—</option>
+                          <option value="New Requirement">New Requirement</option>
+                          <option value="Enhancement">Enhancement</option>
+                          <option value="Bug Fix">Bug Fix</option>
+                          <option value="Change Request">Change Request</option>
+                          <option value="Support">Support</option>
+                        </select>
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{selectedStory.requirementType || "—"}</span>
+                      )}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Billing Type</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <select
+                          value={selectedStory.billingType || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { billingType: e.target.value })}
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        >
+                          <option value="">—</option>
+                          <option value="Billable">Billable</option>
+                          <option value="Non-Billable">Non-Billable</option>
+                          <option value="Internal">Internal</option>
+                        </select>
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{selectedStory.billingType || "—"}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Row 3: Zoho Product */}
+                  <div>
+                    <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Zoho Product</div>
+                    {!isEmployee && updateStoryMeta ? (
+                      <select
+                        value={selectedStory.zohoProductName || ""}
+                        onChange={(e) => updateStoryMeta(selectedStory.id, { zohoProductName: e.target.value })}
+                        style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                      >
+                        <option value="">—</option>
+                        <option value="Zoho CRM">Zoho CRM</option>
+                        <option value="Zoho Books">Zoho Books</option>
+                        <option value="Zoho People">Zoho People</option>
+                        <option value="Zoho Desk">Zoho Desk</option>
+                        <option value="Zoho Projects">Zoho Projects</option>
+                        <option value="Zoho Inventory">Zoho Inventory</option>
+                        <option value="Zoho Analytics">Zoho Analytics</option>
+                        <option value="Zoho Creator">Zoho Creator</option>
+                        <option value="Zoho Flow">Zoho Flow</option>
+                        <option value="Zoho Recruit">Zoho Recruit</option>
+                        <option value="Zoho Campaigns">Zoho Campaigns</option>
+                        <option value="Zoho SalesIQ">Zoho SalesIQ</option>
+                        <option value="Zoho Survey">Zoho Survey</option>
+                        <option value="Zoho Subscriptions">Zoho Subscriptions</option>
+                        <option value="Zoho Sign">Zoho Sign</option>
+                        <option value="Zoho Cliq">Zoho Cliq</option>
+                        <option value="Zoho Mail">Zoho Mail</option>
+                        <option value="Zoho WorkDrive">Zoho WorkDrive</option>
+                        <option value="Zoho Commerce">Zoho Commerce</option>
+                        <option value="Zoho Catalyst">Zoho Catalyst</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    ) : (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{selectedStory.zohoProductName || "—"}</span>
+                    )}
+                  </div>
+
+                  {/* Row 4: Primary + Secondary Ownership */}
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Primary Owner</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <select
+                          value={selectedStory.primaryOwnership || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { primaryOwnership: e.target.value })}
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        >
+                          <option value="">—</option>
+                          {users.map((u) => (
+                            <option key={u.id} value={u.id}>{u.name}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>
+                          {users.find((u) => u.id === selectedStory.primaryOwnership)?.name || "—"}
+                        </span>
+                      )}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Secondary Owner</div>
+                      {!isEmployee && updateStoryMeta ? (
+                        <select
+                          value={selectedStory.secondaryOwnership || ""}
+                          onChange={(e) => updateStoryMeta(selectedStory.id, { secondaryOwnership: e.target.value })}
+                          style={{ ...selectBase, padding: "6px 8px", fontSize: 12 }}
+                        >
+                          <option value="">—</option>
+                          {users.map((u) => (
+                            <option key={u.id} value={u.id}>{u.name}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <span style={{ fontSize: 12, fontWeight: 700, color: C.text }}>
+                          {users.find((u) => u.id === selectedStory.secondaryOwnership)?.name || "—"}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Row 5: FI Remarks */}
+                  <div>
+                    <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>FI Remarks</div>
+                    {!isEmployee && updateStoryMeta ? (
+                      <textarea
+                        value={selectedStory.fiRemarks || ""}
+                        onChange={(e) => updateStoryMeta(selectedStory.id, { fiRemarks: e.target.value })}
+                        placeholder="Internal remarks..."
+                        rows={2}
+                        style={{ ...selectBase, padding: "6px 8px", fontSize: 12, resize: "none", minHeight: 44 }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: C.text, whiteSpace: "pre-wrap" }}>{selectedStory.fiRemarks || "—"}</span>
+                    )}
+                  </div>
+
+                  {/* Row 6: Client Remarks */}
+                  <div>
+                    <div style={{ fontSize: 10, fontWeight: 800, color: C.muted, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 4 }}>Client Remarks</div>
+                    {!isEmployee && updateStoryMeta ? (
+                      <textarea
+                        value={selectedStory.clientRemarks || ""}
+                        onChange={(e) => updateStoryMeta(selectedStory.id, { clientRemarks: e.target.value })}
+                        placeholder="Client notes..."
+                        rows={2}
+                        style={{ ...selectBase, padding: "6px 8px", fontSize: 12, resize: "none", minHeight: 44 }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: C.text, whiteSpace: "pre-wrap" }}>{selectedStory.clientRemarks || "—"}</span>
+                    )}
+                  </div>
+                </div>
               </div>
 
               {/* Tasks */}

@@ -22,7 +22,7 @@ async function list(zcql, { orgId, projectId }) {
   if (proj) where.push(`ProjectID='${proj}'`);
 
   const query = `
-    SELECT ROWID, OrgID, ProjectID, EpicID, SprintID, Title, Description, Points, Priorityy, Status, AssigneeID, IsDeleted, CREATEDTIME, MODIFIEDTIME
+    SELECT ROWID, OrgID, ProjectID, EpicID, SprintID, Title, Description, Points, Priorityy, Status, AssigneeID, GroupName, RequirementType, BillingType, PrimaryOwnership, SecondaryOwnership, FIRemarks, ClientRemarks, ZohoProductName, ModuleName, IsDeleted, CREATEDTIME, MODIFIEDTIME
     FROM ${TABLE_STORIES}
     WHERE ${where.join(" AND ")}
     ORDER BY CREATEDTIME ASC

@@ -4,7 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
 
-import { useAppState, TaskStatus, Priority } from "../context/AppStateContext";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
+
+import { useAppState, TaskStatus, Priority, IssueType } from "../context/AppStateContext";
 import { fetchProjects } from "../redux/Project/ProjectSlice";
 import { fetchEmployees } from "../redux/Employee/EmployeeSlice";
 
@@ -12,6 +15,7 @@ import Toolbar from "../components/sprints/Toolbar";
 import Navigator from "../components/sprints/Navigator";
 import WorkspaceContent from "../components/sprints/WorkspaceContent";
 import IssueDetailDrawer from "../components/sprints/IssueDetailDrawer";
+import IssueConstructionModal from "../components/sprints/IssueConstructionModal";
 
 const EmpSprints = () => {
   const theme = useTheme();
@@ -23,6 +27,10 @@ const EmpSprints = () => {
     try { return JSON.parse(localStorage.getItem("currUser")) || {}; } catch { return {}; }
   }, []);
   const userId = currUser?.userid;
+
+  // Role-based access: Team Lead & Manager get admin controls
+  const ADMIN_ROLES = ["Team Lead", "Manager", "Super Admin", "Admin"];
+  const isSprintAdmin = ADMIN_ROLES.includes(currUser?.role);
 
   /* -- Data from context (API-backed) -- */
   const {
@@ -36,7 +44,12 @@ const EmpSprints = () => {
     error,
     setError,
     updateStoryStatus,
+    updateStoryAssignment,
+    updateStoryMeta,
     assignStoryToSprint,
+    addStory,
+    addTaskToStory,
+    addSubTaskToTask,
   } = useAppState();
 
   /* -- Projects from Redux -- */
@@ -197,12 +210,14 @@ const EmpSprints = () => {
 
   const columns = useMemo(
     () => [
-      { status: TaskStatus.TODO, title: "To Do", color: tw("bg-slate-50/50", "bg-slate-900/40"), border: tw("border-slate-200/50", "border-slate-800/60") },
-      { status: TaskStatus.IN_PROGRESS, title: "In Progress", color: tw("bg-blue-50/30", "bg-blue-950/20"), border: tw("border-blue-200/30", "border-blue-900/40") },
-      { status: TaskStatus.CODE_REVIEW, title: "Review", color: tw("bg-amber-50/30", "bg-amber-950/15"), border: tw("border-amber-200/30", "border-amber-900/35") },
-      { status: TaskStatus.QA, title: "QA", color: tw("bg-purple-50/30", "bg-purple-950/15"), border: tw("border-purple-200/30", "border-purple-900/35") },
-      { status: TaskStatus.BLOCKED, title: "Blocked", color: tw("bg-red-50/30", "bg-red-950/15"), border: tw("border-red-200/30", "border-red-900/35") },
-      { status: TaskStatus.DONE, title: "Done", color: tw("bg-emerald-50/30", "bg-emerald-950/15"), border: tw("border-emerald-200/30", "border-emerald-900/35") },
+      { status: TaskStatus.NOT_STARTED, title: "Not Started", color: tw("bg-slate-50/50", "bg-slate-900/40"), border: tw("border-slate-200/50", "border-slate-800/60") },
+      { status: TaskStatus.WIP, title: "WIP", color: tw("bg-blue-50/30", "bg-blue-950/20"), border: tw("border-blue-200/30", "border-blue-900/40") },
+      { status: TaskStatus.UNDER_INTERNAL_TESTING, title: "Internal Testing", color: tw("bg-amber-50/30", "bg-amber-950/15"), border: tw("border-amber-200/30", "border-amber-900/35") },
+      { status: TaskStatus.PENDING_FROM_ZOHO, title: "Pending Zoho", color: tw("bg-orange-50/30", "bg-orange-950/15"), border: tw("border-orange-200/30", "border-orange-900/35") },
+      { status: TaskStatus.PENDING_FROM_CLIENT, title: "Pending Client", color: tw("bg-rose-50/30", "bg-rose-950/15"), border: tw("border-rose-200/30", "border-rose-900/35") },
+      { status: TaskStatus.RELEASED_FOR_UAT, title: "Released For UAT", color: tw("bg-purple-50/30", "bg-purple-950/15"), border: tw("border-purple-200/30", "border-purple-900/35") },
+      { status: TaskStatus.UAT_APPROVED_BY_CLIENT, title: "UAT Approved", color: tw("bg-teal-50/30", "bg-teal-950/15"), border: tw("border-teal-200/30", "border-teal-900/35") },
+      { status: TaskStatus.CLOSED, title: "Closed", color: tw("bg-emerald-50/30", "bg-emerald-950/15"), border: tw("border-emerald-200/30", "border-emerald-900/35") },
     ],
     [isDark] // eslint-disable-line react-hooks/exhaustive-deps
   );
@@ -228,6 +243,135 @@ const EmpSprints = () => {
         return { icon: "\u2193", color: tw("text-slate-400", "text-slate-400"), bg: tw("bg-slate-50", "bg-slate-900/30"), border: tw("border-slate-100", "border-slate-800/60") };
     }
   }, [isDark]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /* -- Sprint admin: create modal state -- */
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [createType, setCreateType] = useState(IssueType.STORY);
+  const [createData, setCreateData] = useState({
+    title: "", description: "", priority: Priority.MEDIUM, points: 3,
+    epicId: "", milestoneId: "", parentId: "", dueDate: "", color: "#243859",
+    assigneeId: "", sprintId: "", status: TaskStatus.NOT_STARTED,
+    groupName: "", requirementType: "", billingType: "",
+    primaryOwnership: "", secondaryOwnership: "",
+    fiRemarks: "", clientRemarks: "", zohoProductName: "", moduleName: "",
+  });
+
+  const epicsRef = useRef(epics);
+  epicsRef.current = epics;
+  const milestonesRef = useRef(milestones);
+  milestonesRef.current = milestones;
+  const activeTabRef = useRef(activeTab);
+  activeTabRef.current = activeTab;
+  const currentSprintIdRef = useRef(currentSprintId);
+  currentSprintIdRef.current = currentSprintId;
+
+  const handleOpenCreate = useCallback((type, parentId, forcedStatus) => {
+    if (!isSprintAdmin) return;
+    setCreateType(type);
+    setCreateData({
+      title: "", description: "", priority: Priority.MEDIUM, points: 3,
+      epicId: type === IssueType.STORY ? parentId || epicsRef.current[0]?.id || "" : "",
+      milestoneId: type === IssueType.EPIC ? parentId || milestonesRef.current[0]?.id || "" : "",
+      parentId: "", dueDate: "", color: "#243859", assigneeId: "",
+      sprintId: type === IssueType.STORY && activeTabRef.current === "board" ? currentSprintIdRef.current : "",
+      status: forcedStatus || (activeTabRef.current === "board" ? TaskStatus.NOT_STARTED : TaskStatus.BACKLOG),
+      groupName: "", requirementType: "", billingType: "",
+      primaryOwnership: "", secondaryOwnership: "",
+      fiRemarks: "", clientRemarks: "", zohoProductName: "", moduleName: "",
+    });
+    setIsCreateModalOpen(true);
+  }, [isSprintAdmin]);
+
+  const createTypeRef = useRef(createType);
+  createTypeRef.current = createType;
+  const createDataRef = useRef(createData);
+  createDataRef.current = createData;
+
+  const handleCreateSubmit = useCallback(async (e) => {
+    if (e?.preventDefault) e.preventDefault();
+    const ct = createTypeRef.current;
+    const cd = createDataRef.current;
+    if (!cd.title) return;
+
+    if (ct === IssueType.STORY) {
+      await addStory({
+        title: cd.title, description: cd.description, points: cd.points,
+        priority: cd.priority, status: cd.status,
+        epicId: cd.epicId || epicsRef.current[0]?.id || "",
+        sprintId: cd.sprintId || "", assigneeId: cd.assigneeId || "",
+        groupName: cd.groupName || "", requirementType: cd.requirementType || "",
+        billingType: cd.billingType || "", primaryOwnership: cd.primaryOwnership || "",
+        secondaryOwnership: cd.secondaryOwnership || "", fiRemarks: cd.fiRemarks || "",
+        clientRemarks: cd.clientRemarks || "", zohoProductName: cd.zohoProductName || "",
+        moduleName: cd.moduleName || "",
+      });
+    }
+    setIsCreateModalOpen(false);
+  }, [addStory]);
+
+  /* ── Export sprint data to Excel (sprint admins only) ── */
+  const handleExport = useCallback(() => {
+    if (!activeSprint || !isSprintAdmin) return;
+
+    const getUserName = (id) => {
+      const u = users.find((u) => u.id === id);
+      return u ? u.name : "";
+    };
+
+    const sprintName = activeSprint.name || "Sprint";
+
+    const summaryData = [
+      { Field: "Sprint Name", Value: activeSprint.name },
+      { Field: "Goal", Value: activeSprint.goal },
+      { Field: "Start Date", Value: activeSprint.startDate },
+      { Field: "End Date", Value: activeSprint.endDate },
+      { Field: "Status", Value: activeSprint.status },
+      { Field: "Total Stories", Value: sprintStories.length },
+      { Field: "Total Story Points", Value: sprintStories.reduce((sum, s) => sum + (s.points || 0), 0) },
+    ];
+
+    const storiesData = sprintStories.map((s) => {
+      const epic = epics.find((e) => e.id === s.epicId);
+      return {
+        "Story ID": s.displayId, Title: s.title, Description: s.description,
+        Epic: epic?.title || "", Priority: s.priority, Status: s.status,
+        "Story Points": s.points, "Estimated Hours": s.estimatedHours,
+        Assignee: getUserName(s.assigneeId),
+        "Group Name": s.groupName || "", "Requirement Type": s.requirementType || "",
+        "Billing Type": s.billingType || "",
+        "Primary Ownership": getUserName(s.primaryOwnership),
+        "Secondary Ownership": getUserName(s.secondaryOwnership),
+        "FI Remarks": s.fiRemarks || "", "Client Remarks": s.clientRemarks || "",
+        "Zoho Product": s.zohoProductName || "", "Module Name": s.moduleName || "",
+        "Tasks Count": (s.tasks || []).length,
+      };
+    });
+
+    const tasksData = [];
+    sprintStories.forEach((s) => {
+      (s.tasks || []).forEach((t) => {
+        tasksData.push({
+          "Task ID": t.displayId, Title: t.title,
+          "Parent Story": s.title, "Story ID": s.displayId,
+          Status: t.status, "Estimated Hours": t.estimatedHours,
+          Assignee: getUserName(t.assigneeId), "Due Date": t.dueDate,
+        });
+      });
+    });
+
+    const wb = XLSX.utils.book_new();
+    const ws1 = XLSX.utils.json_to_sheet(summaryData);
+    XLSX.utils.book_append_sheet(wb, ws1, "Sprint Summary");
+    const ws2 = XLSX.utils.json_to_sheet(storiesData.length ? storiesData : [{ "No stories": "" }]);
+    XLSX.utils.book_append_sheet(wb, ws2, "Stories");
+    const ws3 = XLSX.utils.json_to_sheet(tasksData.length ? tasksData : [{ "No tasks": "" }]);
+    XLSX.utils.book_append_sheet(wb, ws3, "Tasks");
+
+    const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+    const blob = new Blob([wbout], { type: "application/octet-stream" });
+    const safeName = sprintName.replace(/[^a-zA-Z0-9_-]/g, "_");
+    saveAs(blob, `${safeName}_${new Date().toISOString().slice(0, 10)}.xlsx`);
+  }, [activeSprint, sprintStories, epics, users, isSprintAdmin]);
 
   const pageStyle = useMemo(
     () => ({
@@ -430,7 +574,8 @@ const EmpSprints = () => {
             sprints={sprints}
             theme={theme}
             isDark={isDark}
-            isEmployee
+            isEmployee={!isSprintAdmin}
+            onExport={isSprintAdmin ? handleExport : undefined}
           />
 
           <div className="flex flex-1 overflow-hidden">
@@ -442,10 +587,10 @@ const EmpSprints = () => {
               toggleNode={toggleNode}
               selectedIssueId={selectedIssueId}
               setSelectedIssueId={setSelectedIssueId}
-              handleOpenCreate={() => {}}
+              handleOpenCreate={isSprintAdmin ? handleOpenCreate : () => {}}
               theme={theme}
               isDark={isDark}
-              isEmployee
+              isEmployee={!isSprintAdmin}
             />
 
             <WorkspaceContent
@@ -461,12 +606,12 @@ const EmpSprints = () => {
               getPriorityConfig={getPriorityConfig}
               assignStoryToSprint={assignStoryToSprint}
               updateStoryStatus={updateStoryStatus}
-              handleOpenCreate={() => {}}
+              handleOpenCreate={isSprintAdmin ? handleOpenCreate : () => {}}
               activeSprint={activeSprint}
               TaskStatus={TaskStatus}
               theme={theme}
               isDark={isDark}
-              isEmployee
+              isEmployee={!isSprintAdmin}
             />
 
             <IssueDetailDrawer
@@ -476,16 +621,37 @@ const EmpSprints = () => {
               users={users}
               sprints={sprints}
               updateStoryStatus={updateStoryStatus}
+              updateStoryAssignment={isSprintAdmin ? updateStoryAssignment : undefined}
               assignStoryToSprint={assignStoryToSprint}
-              handleOpenCreate={() => {}}
+              handleOpenCreate={isSprintAdmin ? handleOpenCreate : () => {}}
               TaskStatus={TaskStatus}
               theme={theme}
               isDark={isDark}
+              addTaskToStory={isSprintAdmin ? addTaskToStory : undefined}
+              addSubTaskToTask={isSprintAdmin ? addSubTaskToTask : undefined}
+              updateStoryMeta={isSprintAdmin ? updateStoryMeta : undefined}
               projectId={selectedProjectId}
               projectName={selectedProjectName}
-              isEmployee
+              isEmployee={!isSprintAdmin}
             />
           </div>
+
+          {isSprintAdmin && (
+            <IssueConstructionModal
+              open={isCreateModalOpen}
+              onClose={() => setIsCreateModalOpen(false)}
+              createType={createType}
+              createData={createData}
+              setCreateData={setCreateData}
+              handleCreateSubmit={handleCreateSubmit}
+              epics={epics}
+              sprints={sprints}
+              milestones={milestones}
+              Priority={Priority}
+              TaskStatus={TaskStatus}
+              users={users}
+            />
+          )}
         </div>
       )}
     </div>

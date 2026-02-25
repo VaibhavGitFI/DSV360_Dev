@@ -2,6 +2,10 @@
 
 const TABLE = "Sprints";
 
+function escapeZcqlString(value) {
+  return String(value ?? "").replace(/'/g, "''");
+}
+
 function unwrap(rows) {
   if (!Array.isArray(rows)) return [];
   return rows.map((r) => {
@@ -11,9 +15,12 @@ function unwrap(rows) {
 }
 
 async function list(zcql, { orgId, projectId }) {
-  const where = projectId
-    ? `WHERE OrgID='${orgId}' AND ProjectID='${projectId}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)`
-    : `WHERE OrgID='${orgId}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)`;
+  const org = escapeZcqlString(orgId);
+  const proj = escapeZcqlString(projectId);
+
+  const where = proj
+    ? `WHERE OrgID='${org}' AND ProjectID='${proj}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)`
+    : `WHERE OrgID='${org}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)`;
 
   const query = `
     SELECT ROWID, OrgID, ProjectID, SprintName, Goal, StartDate, EndDate, Status, IsDeleted, CREATEDTIME, MODIFIEDTIME
@@ -25,10 +32,13 @@ async function list(zcql, { orgId, projectId }) {
 }
 
 async function getById(zcql, { orgId, id }) {
+  const org = escapeZcqlString(orgId);
+  const safeId = escapeZcqlString(id);
+
   const query = `
     SELECT ROWID, OrgID, ProjectID, SprintName, Goal, StartDate, EndDate, Status, IsDeleted, CREATEDTIME, MODIFIEDTIME
     FROM ${TABLE}
-    WHERE OrgID='${orgId}' AND ROWID='${id}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)
+    WHERE OrgID='${org}' AND ROWID='${safeId}' AND (IsDeleted IS NULL OR IsDeleted='0' OR IsDeleted=0)
     LIMIT 1
   `;
   return await zcql.executeZCQLQuery(query);

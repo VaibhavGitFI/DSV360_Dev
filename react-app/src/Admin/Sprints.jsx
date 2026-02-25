@@ -36,6 +36,7 @@ const Sprints = () => {
     setError,
     updateStoryStatus,
     updateStoryAssignment,
+    updateStoryMeta,
     assignStoryToSprint,
     addMilestone,
     addEpic,
@@ -107,7 +108,16 @@ const Sprints = () => {
     color: "#243859",
     assigneeId: "",
     sprintId: "",
-    status: TaskStatus.TODO,
+    status: TaskStatus.NOT_STARTED,
+    groupName: "",
+    requirementType: "",
+    billingType: "",
+    primaryOwnership: "",
+    secondaryOwnership: "",
+    fiRemarks: "",
+    clientRemarks: "",
+    zohoProductName: "",
+    moduleName: "",
   });
 
   const [sprintData, setSprintData] = useState({ name: "", goal: "", startDate: "", endDate: "" });
@@ -211,12 +221,14 @@ const Sprints = () => {
 
   const columns = useMemo(
     () => [
-      { status: TaskStatus.TODO, title: "To Do", color: tw("bg-slate-50/50", "bg-slate-900/40"), border: tw("border-slate-200/50", "border-slate-800/60") },
-      { status: TaskStatus.IN_PROGRESS, title: "In Progress", color: tw("bg-blue-50/30", "bg-blue-950/20"), border: tw("border-blue-200/30", "border-blue-900/40") },
-      { status: TaskStatus.CODE_REVIEW, title: "Review", color: tw("bg-amber-50/30", "bg-amber-950/15"), border: tw("border-amber-200/30", "border-amber-900/35") },
-      { status: TaskStatus.QA, title: "QA", color: tw("bg-purple-50/30", "bg-purple-950/15"), border: tw("border-purple-200/30", "border-purple-900/35") },
-      { status: TaskStatus.BLOCKED, title: "Blocked", color: tw("bg-red-50/30", "bg-red-950/15"), border: tw("border-red-200/30", "border-red-900/35") },
-      { status: TaskStatus.DONE, title: "Done", color: tw("bg-emerald-50/30", "bg-emerald-950/15"), border: tw("border-emerald-200/30", "border-emerald-900/35") },
+      { status: TaskStatus.NOT_STARTED, title: "Not Started", color: tw("bg-slate-50/50", "bg-slate-900/40"), border: tw("border-slate-200/50", "border-slate-800/60") },
+      { status: TaskStatus.WIP, title: "WIP", color: tw("bg-blue-50/30", "bg-blue-950/20"), border: tw("border-blue-200/30", "border-blue-900/40") },
+      { status: TaskStatus.UNDER_INTERNAL_TESTING, title: "Internal Testing", color: tw("bg-amber-50/30", "bg-amber-950/15"), border: tw("border-amber-200/30", "border-amber-900/35") },
+      { status: TaskStatus.PENDING_FROM_ZOHO, title: "Pending Zoho", color: tw("bg-orange-50/30", "bg-orange-950/15"), border: tw("border-orange-200/30", "border-orange-900/35") },
+      { status: TaskStatus.PENDING_FROM_CLIENT, title: "Pending Client", color: tw("bg-rose-50/30", "bg-rose-950/15"), border: tw("border-rose-200/30", "border-rose-900/35") },
+      { status: TaskStatus.RELEASED_FOR_UAT, title: "Released For UAT", color: tw("bg-purple-50/30", "bg-purple-950/15"), border: tw("border-purple-200/30", "border-purple-900/35") },
+      { status: TaskStatus.UAT_APPROVED_BY_CLIENT, title: "UAT Approved", color: tw("bg-teal-50/30", "bg-teal-950/15"), border: tw("border-teal-200/30", "border-teal-900/35") },
+      { status: TaskStatus.CLOSED, title: "Closed", color: tw("bg-emerald-50/30", "bg-emerald-950/15"), border: tw("border-emerald-200/30", "border-emerald-900/35") },
     ],
     [isDark] // eslint-disable-line react-hooks/exhaustive-deps
   );
@@ -267,7 +279,16 @@ const Sprints = () => {
       color: "#243859",
       assigneeId: "",
       sprintId: type === IssueType.STORY && activeTabRef.current === "board" ? currentSprintIdRef.current : "",
-      status: forcedStatus || (activeTabRef.current === "board" ? TaskStatus.TODO : TaskStatus.BACKLOG),
+      status: forcedStatus || (activeTabRef.current === "board" ? TaskStatus.NOT_STARTED : TaskStatus.BACKLOG),
+      groupName: "",
+      requirementType: "",
+      billingType: "",
+      primaryOwnership: "",
+      secondaryOwnership: "",
+      fiRemarks: "",
+      clientRemarks: "",
+      zohoProductName: "",
+      moduleName: "",
     });
     setIsCreateModalOpen(true);
   }, []);
@@ -311,6 +332,15 @@ const Sprints = () => {
         epicId: cd.epicId || epicsRef.current[0]?.id || "",
         sprintId: cd.sprintId || "",
         assigneeId: cd.assigneeId || "",
+        groupName: cd.groupName || "",
+        requirementType: cd.requirementType || "",
+        billingType: cd.billingType || "",
+        primaryOwnership: cd.primaryOwnership || "",
+        secondaryOwnership: cd.secondaryOwnership || "",
+        fiRemarks: cd.fiRemarks || "",
+        clientRemarks: cd.clientRemarks || "",
+        zohoProductName: cd.zohoProductName || "",
+        moduleName: cd.moduleName || "",
       });
     }
 
@@ -369,6 +399,15 @@ const Sprints = () => {
         "Story Points": s.points,
         "Estimated Hours": s.estimatedHours,
         Assignee: getUserName(s.assigneeId),
+        "Group Name": s.groupName || "",
+        "Requirement Type": s.requirementType || "",
+        "Billing Type": s.billingType || "",
+        "Primary Ownership": getUserName(s.primaryOwnership),
+        "Secondary Ownership": getUserName(s.secondaryOwnership),
+        "FI Remarks": s.fiRemarks || "",
+        "Client Remarks": s.clientRemarks || "",
+        "Zoho Product": s.zohoProductName || "",
+        "Module Name": s.moduleName || "",
         "Tasks Count": (s.tasks || []).length,
       };
     });
@@ -417,7 +456,7 @@ const Sprints = () => {
     XLSX.utils.book_append_sheet(wb, ws1, "Sprint Summary");
 
     const ws2 = XLSX.utils.json_to_sheet(storiesData.length ? storiesData : [{ "No stories in this sprint": "" }]);
-    ws2["!cols"] = [{ wch: 12 }, { wch: 30 }, { wch: 40 }, { wch: 20 }, { wch: 12 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 20 }, { wch: 12 }];
+    ws2["!cols"] = [{ wch: 12 }, { wch: 30 }, { wch: 40 }, { wch: 20 }, { wch: 12 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 20 }, { wch: 16 }, { wch: 18 }, { wch: 14 }, { wch: 20 }, { wch: 20 }, { wch: 30 }, { wch: 30 }, { wch: 18 }, { wch: 16 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, ws2, "Stories");
 
     const ws3 = XLSX.utils.json_to_sheet(tasksData.length ? tasksData : [{ "No tasks in this sprint": "" }]);
@@ -689,6 +728,7 @@ const Sprints = () => {
               isDark={isDark}
               addTaskToStory={addTaskToStory}
               addSubTaskToTask={addSubTaskToTask}
+              updateStoryMeta={updateStoryMeta}
               projectId={selectedProjectId}
               projectName={selectedProjectName}
             />

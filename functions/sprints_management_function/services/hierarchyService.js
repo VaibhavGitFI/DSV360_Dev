@@ -21,7 +21,19 @@ function normalizeStory(row) {
   if (!row || typeof row !== "object") return row;
 
   const Priority = row.Priorityy ?? row.Priority ?? "MEDIUM";
-  const normalized = { ...row, Priority };
+  const normalized = {
+    ...row,
+    Priority,
+    GroupName: row.GroupName || "",
+    RequirementType: row.RequirementType || "",
+    BillingType: row.BillingType || "",
+    PrimaryOwnership: row.PrimaryOwnership || "",
+    SecondaryOwnership: row.SecondaryOwnership || "",
+    FIRemarks: row.FIRemarks || "",
+    ClientRemarks: row.ClientRemarks || "",
+    ZohoProductName: row.ZohoProductName || "",
+    ModuleName: row.ModuleName || "",
+  };
 
   // Never expose datastore-specific column name
   delete normalized.Priorityy;
@@ -121,8 +133,17 @@ async function createStory({ catalystApp, user, payload }) {
     // accept Priorityy or Priority, store in Priorityy
     Priorityy: payload.Priorityy || payload.Priority || "MEDIUM",
 
-    Status: payload.Status || "TODO",
+    Status: payload.Status || "NOT_STARTED",
     AssigneeID: payload.AssigneeID || "",
+    GroupName: payload.GroupName || "",
+    RequirementType: payload.RequirementType || "",
+    BillingType: payload.BillingType || "",
+    PrimaryOwnership: payload.PrimaryOwnership || "",
+    SecondaryOwnership: payload.SecondaryOwnership || "",
+    FIRemarks: payload.FIRemarks || "",
+    ClientRemarks: payload.ClientRemarks || "",
+    ZohoProductName: payload.ZohoProductName || "",
+    ModuleName: payload.ModuleName || "",
     IsDeleted: 0,
   });
 
@@ -158,6 +179,17 @@ async function updateStory({ catalystApp, user, storyId, payload }) {
 
   // Priority: store into Priorityy (datastore column)
   if (payload.Priority !== undefined) patch.Priorityy = payload.Priority;
+
+  // 9 new fields
+  if (payload.GroupName !== undefined) patch.GroupName = payload.GroupName;
+  if (payload.RequirementType !== undefined) patch.RequirementType = payload.RequirementType;
+  if (payload.BillingType !== undefined) patch.BillingType = payload.BillingType;
+  if (payload.PrimaryOwnership !== undefined) patch.PrimaryOwnership = payload.PrimaryOwnership;
+  if (payload.SecondaryOwnership !== undefined) patch.SecondaryOwnership = payload.SecondaryOwnership;
+  if (payload.FIRemarks !== undefined) patch.FIRemarks = payload.FIRemarks;
+  if (payload.ClientRemarks !== undefined) patch.ClientRemarks = payload.ClientRemarks;
+  if (payload.ZohoProductName !== undefined) patch.ZohoProductName = payload.ZohoProductName;
+  if (payload.ModuleName !== undefined) patch.ModuleName = payload.ModuleName;
 
   // Always ensure row is not deleted
   patch.IsDeleted = 0;

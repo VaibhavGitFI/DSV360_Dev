@@ -46,12 +46,12 @@ const WorkspaceContent = ({
   const { C, fontFamily } = getUI(theme);
 
   const columnColor = (status) => {
-    if (status === TaskStatus.TODO) return C.combo.todo;
-    if (status === TaskStatus.IN_PROGRESS) return C.combo.prog;
-    if (status === TaskStatus.CODE_REVIEW) return C.combo.rev;
-    if (status === TaskStatus.QA) return C.combo.qa;
-    if (status === TaskStatus.BLOCKED) return C.danger;
-    if (status === TaskStatus.DONE) return C.accentA;
+    if (status === TaskStatus.TODO || status === TaskStatus.NOT_STARTED) return C.combo.todo;
+    if (status === TaskStatus.IN_PROGRESS || status === TaskStatus.WIP) return C.combo.prog;
+    if (status === TaskStatus.CODE_REVIEW || status === TaskStatus.UNDER_INTERNAL_TESTING) return C.combo.rev;
+    if (status === TaskStatus.QA || status === TaskStatus.RELEASED_FOR_UAT) return C.combo.qa;
+    if (status === TaskStatus.BLOCKED || status === TaskStatus.PENDING_FROM_ZOHO || status === TaskStatus.PENDING_FROM_CLIENT) return C.danger;
+    if (status === TaskStatus.DONE || status === TaskStatus.UAT_APPROVED_BY_CLIENT || status === TaskStatus.CLOSED) return C.accentA;
     return C.combo.todo;
   };
 
@@ -384,7 +384,7 @@ const WorkspaceContent = ({
                       onClick={(e) => e.stopPropagation()}
                       onChange={(e) => {
                         assignStoryToSprint(story.id, e.target.value);
-                        if (e.target.value && story.status === TaskStatus.BACKLOG) updateStoryStatus(story.id, TaskStatus.TODO);
+                        if (e.target.value && story.status === TaskStatus.BACKLOG) updateStoryStatus(story.id, TaskStatus.NOT_STARTED);
                       }}
                       className="rounded-lg px-3 py-2 text-[11px] font-bold uppercase outline-none border cursor-pointer"
                       style={{ backgroundColor: C.base, borderColor: C.borderSoft, color: C.text }}

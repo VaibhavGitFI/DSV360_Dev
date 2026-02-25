@@ -3,6 +3,7 @@ import { SprintAPI, HierarchyAPI, TaskAPI, SubTaskAPI } from "../Admin/sprintsAp
 
 /** Enums */
 export const TaskStatus = {
+  // Legacy statuses (backward compat)
   BACKLOG: "BACKLOG",
   TODO: "TODO",
   IN_PROGRESS: "IN_PROGRESS",
@@ -10,6 +11,15 @@ export const TaskStatus = {
   QA: "QA",
   BLOCKED: "BLOCKED",
   DONE: "DONE",
+  // New statuses
+  NOT_STARTED: "NOT_STARTED",
+  WIP: "WIP",
+  UNDER_INTERNAL_TESTING: "UNDER_INTERNAL_TESTING",
+  PENDING_FROM_ZOHO: "PENDING_FROM_ZOHO",
+  PENDING_FROM_CLIENT: "PENDING_FROM_CLIENT",
+  RELEASED_FOR_UAT: "RELEASED_FOR_UAT",
+  UAT_APPROVED_BY_CLIENT: "UAT_APPROVED_BY_CLIENT",
+  CLOSED: "CLOSED",
 };
 
 export const Priority = {
@@ -95,13 +105,22 @@ function mapStory(row) {
     description: row.Description || "",
     points: Number(row.Points || 0),
     priority: row.Priority || row.Priorityy || "MEDIUM",
-    status: row.Status || "TODO",
+    status: row.Status || "NOT_STARTED",
     epicId: row.EpicID || "",
     sprintId: row.SprintID || "",
     assigneeId: row.AssigneeID || "",
     estimatedHours: (Number(row.Points || 0)) * 4,
     dueDate: "",
     tasks: [],
+    groupName: row.GroupName || "",
+    requirementType: row.RequirementType || "",
+    billingType: row.BillingType || "",
+    primaryOwnership: row.PrimaryOwnership || "",
+    secondaryOwnership: row.SecondaryOwnership || "",
+    fiRemarks: row.FIRemarks || "",
+    clientRemarks: row.ClientRemarks || "",
+    zohoProductName: row.ZohoProductName || "",
+    moduleName: row.ModuleName || "",
   };
 }
 
@@ -244,6 +263,15 @@ export const AppStateProvider = ({ children }) => {
       if (patch.epicId !== undefined) apiPatch.EpicID = patch.epicId;
       if (patch.sprintId !== undefined) apiPatch.SprintID = patch.sprintId;
       if (patch.assigneeId !== undefined) apiPatch.AssigneeID = patch.assigneeId;
+      if (patch.groupName !== undefined) apiPatch.GroupName = patch.groupName;
+      if (patch.requirementType !== undefined) apiPatch.RequirementType = patch.requirementType;
+      if (patch.billingType !== undefined) apiPatch.BillingType = patch.billingType;
+      if (patch.primaryOwnership !== undefined) apiPatch.PrimaryOwnership = patch.primaryOwnership;
+      if (patch.secondaryOwnership !== undefined) apiPatch.SecondaryOwnership = patch.secondaryOwnership;
+      if (patch.fiRemarks !== undefined) apiPatch.FIRemarks = patch.fiRemarks;
+      if (patch.clientRemarks !== undefined) apiPatch.ClientRemarks = patch.clientRemarks;
+      if (patch.zohoProductName !== undefined) apiPatch.ZohoProductName = patch.zohoProductName;
+      if (patch.moduleName !== undefined) apiPatch.ModuleName = patch.moduleName;
       await HierarchyAPI.updateStory(storyId, apiPatch);
     } catch (err) {
       setError(err.message);
@@ -339,7 +367,7 @@ export const AppStateProvider = ({ children }) => {
     return null;
   }, []);
 
-  const addStory = useCallback(async ({ title, description, points, priority, status, epicId, sprintId, assigneeId, dueDate }) => {
+  const addStory = useCallback(async ({ title, description, points, priority, status, epicId, sprintId, assigneeId, dueDate, groupName, requirementType, billingType, primaryOwnership, secondaryOwnership, fiRemarks, clientRemarks, zohoProductName, moduleName }) => {
     const tempId = `TEMP-US-${Date.now()}`;
     const pts = Number(points) || 0;
     setStories((prev) => [
@@ -358,6 +386,15 @@ export const AppStateProvider = ({ children }) => {
         estimatedHours: pts * 4,
         dueDate: dueDate || "",
         tasks: [],
+        groupName: groupName || "",
+        requirementType: requirementType || "",
+        billingType: billingType || "",
+        primaryOwnership: primaryOwnership || "",
+        secondaryOwnership: secondaryOwnership || "",
+        fiRemarks: fiRemarks || "",
+        clientRemarks: clientRemarks || "",
+        zohoProductName: zohoProductName || "",
+        moduleName: moduleName || "",
       },
     ]);
     try {
@@ -369,8 +406,17 @@ export const AppStateProvider = ({ children }) => {
         Description: description || "",
         Points: pts,
         Priority: priority || "MEDIUM",
-        Status: status || "TODO",
+        Status: status || "NOT_STARTED",
         AssigneeID: assigneeId || "",
+        GroupName: groupName || "",
+        RequirementType: requirementType || "",
+        BillingType: billingType || "",
+        PrimaryOwnership: primaryOwnership || "",
+        SecondaryOwnership: secondaryOwnership || "",
+        FIRemarks: fiRemarks || "",
+        ClientRemarks: clientRemarks || "",
+        ZohoProductName: zohoProductName || "",
+        ModuleName: moduleName || "",
       });
       if (res.success) {
         const newId = res.data?.ROWID;

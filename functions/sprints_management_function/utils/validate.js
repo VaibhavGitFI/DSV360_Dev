@@ -9,7 +9,14 @@
  */
 
 const PRIORITIES = new Set(["CRITICAL", "HIGH", "MEDIUM", "LOW"]);
-const STORY_STATUSES = new Set(["BACKLOG", "TODO", "IN_PROGRESS", "CODE_REVIEW", "QA", "BLOCKED", "DONE"]);
+const STORY_STATUSES = new Set([
+  // Legacy statuses (backward compat)
+  "BACKLOG", "TODO", "IN_PROGRESS", "CODE_REVIEW", "QA", "BLOCKED", "DONE",
+  // New statuses
+  "NOT_STARTED", "WIP", "UNDER_INTERNAL_TESTING",
+  "PENDING_FROM_ZOHO", "PENDING_FROM_CLIENT",
+  "RELEASED_FOR_UAT", "UAT_APPROVED_BY_CLIENT", "CLOSED",
+]);
 
 const isNonEmptyString = (v) => typeof v === "string" && v.trim().length > 0;
 
@@ -100,7 +107,18 @@ function validateCreateStoryPayload(body) {
   const AssigneeID = toTrim(body?.AssigneeID); // optional
 
   const Priority = PRIORITIES.has(PriorityRaw) ? PriorityRaw : "MEDIUM";
-  const Status = STORY_STATUSES.has(StatusRaw) ? StatusRaw : "TODO";
+  const Status = STORY_STATUSES.has(StatusRaw) ? StatusRaw : "NOT_STARTED";
+
+  // 9 new optional fields
+  const GroupName = toTrim(body?.GroupName);
+  const RequirementType = toTrim(body?.RequirementType);
+  const BillingType = toTrim(body?.BillingType);
+  const PrimaryOwnership = toTrim(body?.PrimaryOwnership);
+  const SecondaryOwnership = toTrim(body?.SecondaryOwnership);
+  const FIRemarks = toTrim(body?.FIRemarks);
+  const ClientRemarks = toTrim(body?.ClientRemarks);
+  const ZohoProductName = toTrim(body?.ZohoProductName);
+  const ModuleName = toTrim(body?.ModuleName);
 
   if (!isNonEmptyString(EpicID)) errors.push("EpicID is required");
   if (!isNonEmptyString(Title)) errors.push("Title is required");
@@ -115,6 +133,15 @@ function validateCreateStoryPayload(body) {
     Priority,
     Status,
     AssigneeID,
+    GroupName,
+    RequirementType,
+    BillingType,
+    PrimaryOwnership,
+    SecondaryOwnership,
+    FIRemarks,
+    ClientRemarks,
+    ZohoProductName,
+    ModuleName,
   });
 }
 
@@ -172,6 +199,17 @@ function validateUpdateStoryPayload(body) {
     if (!STORY_STATUSES.has(stRaw)) errors.push(`Invalid Status: ${stRaw}`);
     else normalized.Status = stRaw;
   }
+
+  // 9 new optional fields
+  if (body?.GroupName !== undefined) normalized.GroupName = toTrim(body.GroupName);
+  if (body?.RequirementType !== undefined) normalized.RequirementType = toTrim(body.RequirementType);
+  if (body?.BillingType !== undefined) normalized.BillingType = toTrim(body.BillingType);
+  if (body?.PrimaryOwnership !== undefined) normalized.PrimaryOwnership = toTrim(body.PrimaryOwnership);
+  if (body?.SecondaryOwnership !== undefined) normalized.SecondaryOwnership = toTrim(body.SecondaryOwnership);
+  if (body?.FIRemarks !== undefined) normalized.FIRemarks = toTrim(body.FIRemarks);
+  if (body?.ClientRemarks !== undefined) normalized.ClientRemarks = toTrim(body.ClientRemarks);
+  if (body?.ZohoProductName !== undefined) normalized.ZohoProductName = toTrim(body.ZohoProductName);
+  if (body?.ModuleName !== undefined) normalized.ModuleName = toTrim(body.ModuleName);
 
   // Prevent empty PATCH
   if (Object.keys(normalized).length === 0) {

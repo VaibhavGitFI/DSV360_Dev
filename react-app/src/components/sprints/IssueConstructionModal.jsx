@@ -403,9 +403,9 @@ const IssueConstructionModal = ({
                       ))
                     ) : (
                       <>
-                        <option value="TODO">TODO</option>
-                        <option value="IN_PROGRESS">IN PROGRESS</option>
-                        <option value="DONE">DONE</option>
+                        <option value="NOT_STARTED">NOT STARTED</option>
+                        <option value="WIP">WIP</option>
+                        <option value="CLOSED">CLOSED</option>
                       </>
                     )}
                   </select>
@@ -415,6 +415,178 @@ const IssueConstructionModal = ({
                     </svg>
                   </div>
                 </div>
+              </div>
+
+              {/* ── New Fields ── */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Group Name</div>
+                  <input
+                    value={createData.groupName || ""}
+                    onChange={(e) => setCreateData({ ...createData, groupName: e.target.value })}
+                    placeholder="e.g. Module A"
+                    style={inputBase}
+                  />
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Module Name</div>
+                  <input
+                    value={createData.moduleName || ""}
+                    onChange={(e) => setCreateData({ ...createData, moduleName: e.target.value })}
+                    placeholder="e.g. Leads"
+                    style={inputBase}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Requirement Type</div>
+                  <div style={{ position: "relative" }}>
+                    <select
+                      value={createData.requirementType || ""}
+                      onChange={(e) => setCreateData({ ...createData, requirementType: e.target.value })}
+                      style={selectBase}
+                    >
+                      <option value="">Select...</option>
+                      <option value="New Requirement">New Requirement</option>
+                      <option value="Enhancement">Enhancement</option>
+                      <option value="Bug Fix">Bug Fix</option>
+                      <option value="Change Request">Change Request</option>
+                      <option value="Support">Support</option>
+                    </select>
+                    <div style={arrow}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Billing Type</div>
+                  <div style={{ position: "relative" }}>
+                    <select
+                      value={createData.billingType || ""}
+                      onChange={(e) => setCreateData({ ...createData, billingType: e.target.value })}
+                      style={selectBase}
+                    >
+                      <option value="">Select...</option>
+                      <option value="Billable">Billable</option>
+                      <option value="Non-Billable">Non-Billable</option>
+                      <option value="Internal">Internal</option>
+                    </select>
+                    <div style={arrow}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={labelStyle}>Zoho Product Name</div>
+                <div style={{ position: "relative" }}>
+                  <select
+                    value={createData.zohoProductName || ""}
+                    onChange={(e) => setCreateData({ ...createData, zohoProductName: e.target.value })}
+                    style={selectBase}
+                  >
+                    <option value="">Select...</option>
+                    <option value="Zoho CRM">Zoho CRM</option>
+                    <option value="Zoho Books">Zoho Books</option>
+                    <option value="Zoho People">Zoho People</option>
+                    <option value="Zoho Desk">Zoho Desk</option>
+                    <option value="Zoho Projects">Zoho Projects</option>
+                    <option value="Zoho Inventory">Zoho Inventory</option>
+                    <option value="Zoho Analytics">Zoho Analytics</option>
+                    <option value="Zoho Creator">Zoho Creator</option>
+                    <option value="Zoho Flow">Zoho Flow</option>
+                    <option value="Zoho Recruit">Zoho Recruit</option>
+                    <option value="Zoho Campaigns">Zoho Campaigns</option>
+                    <option value="Zoho SalesIQ">Zoho SalesIQ</option>
+                    <option value="Zoho Survey">Zoho Survey</option>
+                    <option value="Zoho Subscriptions">Zoho Subscriptions</option>
+                    <option value="Zoho Sign">Zoho Sign</option>
+                    <option value="Zoho Cliq">Zoho Cliq</option>
+                    <option value="Zoho Mail">Zoho Mail</option>
+                    <option value="Zoho WorkDrive">Zoho WorkDrive</option>
+                    <option value="Zoho Commerce">Zoho Commerce</option>
+                    <option value="Zoho Catalyst">Zoho Catalyst</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div style={arrow}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Primary Ownership</div>
+                  <div style={{ position: "relative" }}>
+                    <select
+                      value={createData.primaryOwnership || ""}
+                      onChange={(e) => setCreateData({ ...createData, primaryOwnership: e.target.value })}
+                      style={selectBase}
+                    >
+                      <option value="">Select...</option>
+                      {users.map((u) => (
+                        <option key={u.id} value={u.id}>{u.name}</option>
+                      ))}
+                    </select>
+                    <div style={arrow}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={labelStyle}>Secondary Ownership</div>
+                  <div style={{ position: "relative" }}>
+                    <select
+                      value={createData.secondaryOwnership || ""}
+                      onChange={(e) => setCreateData({ ...createData, secondaryOwnership: e.target.value })}
+                      style={selectBase}
+                    >
+                      <option value="">Select...</option>
+                      {users.map((u) => (
+                        <option key={u.id} value={u.id}>{u.name}</option>
+                      ))}
+                    </select>
+                    <div style={arrow}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={labelStyle}>FI Remarks</div>
+                <textarea
+                  value={createData.fiRemarks || ""}
+                  onChange={(e) => setCreateData({ ...createData, fiRemarks: e.target.value })}
+                  placeholder="Internal remarks..."
+                  style={{ ...inputBase, minHeight: 60, resize: "none", borderRadius: 16, lineHeight: 1.5, fontWeight: 600 }}
+                />
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={labelStyle}>Client Remarks</div>
+                <textarea
+                  value={createData.clientRemarks || ""}
+                  onChange={(e) => setCreateData({ ...createData, clientRemarks: e.target.value })}
+                  placeholder="Client-facing notes..."
+                  style={{ ...inputBase, minHeight: 60, resize: "none", borderRadius: 16, lineHeight: 1.5, fontWeight: 600 }}
+                />
               </div>
             </>
           )}
